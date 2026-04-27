@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>案例展示 - MediVisual Artist</title>
+<meta name="description" content="MediVisual Artist 案例展示：Nature级医学插图、教学素材、期刊配图等多种风格的AI生成医学可视化作品。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#00d4ff;--primary-dark:#0099cc;--accent:#ff6b35;
+  --bg:#0a0f1a;--bg2:#0d1424;--bg3:#111827;--bg4:#1a2332;
+  --text:#e8edf5;--text2:#94a3b8;--text3:#64748b;
+  --border:#1e293b;--border2:#334155;
+  --gradient:linear-gradient(135deg,#00d4ff,#7c3aed,#ff6b35);
+  --glow:0 0 40px rgba(0,212,255,.15);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter','Noto Sans SC',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:var(--primary);text-decoration:none;transition:.3s}
+a:hover{color:#fff}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,15,26,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{color:var(--text2);font-size:.9rem;font-weight:500;transition:.3s}
+.nav-links a:hover,.nav-links a.active{color:var(--primary)}
+.nav-cta{background:var(--primary);color:var(--bg)!important;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.85rem;transition:.3s}
+.nav-cta:hover{background:#fff;transform:translateY(-1px)}
+.mobile-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+
+/* Hero */
+.hero{min-height:40vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:120px;padding-bottom:60px}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 30% 50%,rgba(0,212,255,.08),transparent 50%),radial-gradient(ellipse at 70% 50%,rgba(124,58,237,.06),transparent 50%);animation:heroPulse 8s ease-in-out infinite}
+@keyframes heroPulse{0%,100%{opacity:.6}50%{opacity:1}}
+.hero-content{position:relative;z-index:2;max-width:800px;text-align:center;margin:0 auto}
+.hero h1{font-family:'Space Grotesk','Noto Sans SC',sans-serif;font-size:clamp(2.5rem,5vw,3.5rem);font-weight:800;line-height:1.1;margin-bottom:20px;letter-spacing:-.02em}
+.hero h1 span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.15rem;color:var(--text2);max-width:600px;margin:0 auto;line-height:1.8}
+
+/* Section */
+section{padding:100px 0}
+.section-label{display:inline-block;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;color:var(--primary);margin-bottom:12px;padding:4px 12px;background:rgba(0,212,255,.1);border-radius:4px}
+.section-title{font-family:'Space Grotesk','Noto Sans SC',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;margin-bottom:16px}
+.section-desc{color:var(--text2);max-width:600px;font-size:1.05rem;line-height:1.8}
+
+/* Portfolio Grid */
+.portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:48px}
+.portfolio-card{background:var(--bg2);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:.4s;position:relative}
+.portfolio-card:hover{border-color:var(--primary);transform:translateY(-6px);box-shadow:var(--glow)}
+.portfolio-card:hover .portfolio-visual{filter:brightness(1.1)}
+
+/* Visual placeholder */
+.portfolio-visual{height:220px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.portfolio-visual .placeholder-art{font-size:4rem;opacity:.6}
+.portfolio-visual .overlay{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding:16px}
+.portfolio-visual .style-badge{padding:4px 14px;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);border-radius:100px;font-size:.7rem;font-weight:600;color:#fff;text-transform:uppercase;letter-spacing:.08em}
+
+/* Visual backgrounds */
+.case-covid{background:linear-gradient(135deg,#1a0a2e,#2d1b4e,#0f172a)}
+.case-heart{background:linear-gradient(135deg,#2a0a0a,#4a1515,#1a0505)}
+.case-tumor{background:linear-gradient(135deg,#0a1a0a,#1b3a1b,#051a0a)}
+.case-drug{background:linear-gradient(135deg,#0a1a2e,#1b2b4e,#05152a)}
+.case-neuro{background:linear-gradient(135deg,#1a1a0a,#2e2e1b,#1a1a05)}
+.case-crispr{background:linear-gradient(135deg,#0a2e2e,#1b4e4e,#052a2a)}
+
+/* Card content */
+.portfolio-body{padding:28px}
+.portfolio-body h3{font-size:1.15rem;font-weight:700;margin-bottom:10px}
+.portfolio-body p{color:var(--text2);font-size:.88rem;line-height:1.7;margin-bottom:16px}
+
+/* Before/After concept */
+.ba-concept{display:flex;gap:12px;margin-bottom:16px}
+.ba-box{flex:1;padding:12px 16px;border-radius:10px;font-size:.78rem;line-height:1.6}
+.ba-before{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);color:#fca5a5}
+.ba-before strong{display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:#ef4444;margin-bottom:4px}
+.ba-after{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);color:#86efac}
+.ba-after strong{display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:#22c55e;margin-bottom:4px}
+
+.portfolio-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.meta-tag{padding:3px 10px;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.15);border-radius:100px;font-size:.7rem;color:var(--primary);font-weight:500}
+.meta-tag.style-tag{background:rgba(124,58,237,.1);border-color:rgba(124,58,237,.25);color:#a78bfa}
+
+/* CTA */
+.cta{background:var(--bg2);border:1px solid var(--border);border-radius:24px;padding:80px 60px;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(0,212,255,.1),transparent 70%);border-radius:50%}
+.cta h2{font-family:'Space Grotesk','Noto Sans SC',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;margin-bottom:16px}
+.cta p{color:var(--text2);max-width:500px;margin:0 auto 32px;font-size:1rem}
+.cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--primary);color:var(--bg);border-radius:10px;font-weight:600;font-size:1rem;transition:.3s;border:none;cursor:pointer}
+.btn-primary:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,212,255,.3)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:transparent;color:var(--text);border:1px solid var(--border2);border-radius:10px;font-weight:500;font-size:1rem;transition:.3s;cursor:pointer}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+
+/* Footer */
+footer{padding:60px 0 32px;border-top:1px solid var(--border)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand .logo{font-size:1.2rem;margin-bottom:12px}
+.footer-brand p{color:var(--text2);font-size:.85rem;line-height:1.7;max-width:300px}
+.footer-col h4{font-size:.85rem;font-weight:600;margin-bottom:16px;text-transform:uppercase;letter-spacing:.05em}
+.footer-col a{display:block;color:var(--text2);font-size:.85rem;padding:4px 0;transition:.3s}
+.footer-col a:hover{color:var(--primary)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--border);font-size:.8rem;color:var(--text3)}
+
+/* Responsive */
+@media(max-width:1024px){
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .mobile-toggle{display:block}
+  .portfolio-grid{grid-template-columns:1fr}
+  .hero-buttons{flex-direction:column}
+  .footer-grid{grid-template-columns:1fr}
+  .cta{padding:60px 30px}
+  .ba-concept{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<!-- Nav -->
+<nav>
+<div class="nav-inner">
+  <a href="index.html" class="logo">MediVisual Artist</a>
+  <ul class="nav-links">
+    <li><a href="index.html">首页</a></li>
+    <li><a href="index.html#features">功能</a></li>
+    <li><a href="pricing.html">定价</a></li>
+    <li><a href="about.html">关于</a></li>
+    <li><a href="portfolio.html" class="active">案例</a></li>
+    <li><a href="index.html#contact" class="nav-cta">免费试用</a></li>
+  </ul>
+  <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">&#9776;</button>
+</div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+<div class="container">
+  <div class="hero-content">
+    <h1><span>案例展示</span></h1>
+    <p>从Nature级论文配图到手术教学示意图，MediVisual Artist 覆盖多种医学可视化场景。以下是模拟案例展示。</p>
+  </div>
+</div>
+</section>
+
+<!-- Portfolio Grid -->
+<section style="padding-top:0">
+<div class="container">
+  <div class="portfolio-grid">
+
+    <!-- Case 1 -->
+    <div class="portfolio-card">
+      <div class="portfolio-visual case-covid">
+        <div class="placeholder-art">🦠</div>
+        <div class="overlay"><span class="style-badge">Nature Submission Quality</span></div>
+      </div>
+      <div class="portfolio-body">
+        <h3>COVID-19 病毒入侵机制图</h3>
+        <p>展示SARS-CoV-2通过ACE2受体入侵宿主细胞的完整分子机制，涵盖刺突蛋白构象变化、膜融合过程及下游信号通路激活。</p>
+        <div class="ba-concept">
+          <div class="ba-box ba-before"><strong>Before</strong>论文文字描述 + 简单示意图，缺乏分子层面细节</div>
+          <div class="ba-box ba-after"><strong>After</strong>出版级3D分子机制图，Nature投稿质量</div>
+        </div>
+        <div class="portfolio-meta">
+          <span class="meta-tag style-tag">Nature风格</span>
+          <span class="meta-tag">病毒学</span>
+          <span class="meta-tag">分子机制</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 2 -->
+    <div class="portfolio-card">
+      <div class="portfolio-visual case-heart">
+        <div class="placeholder-art">❤️</div>
+        <div class="overlay"><span class="style-badge">Teaching Material</span></div>
+      </div>
+      <div class="portfolio-body">
+        <h3>心脏瓣膜置换手术示意图</h3>
+        <p>详细展示二尖瓣置换手术的关键步骤，包括体外循环建立、瓣膜切除、人工瓣膜植入及术后评估，适用于医学教学与患者沟通。</p>
+        <div class="ba-concept">
+          <div class="ba-box ba-before"><strong>Before</strong>教科书老旧黑白线图，步骤不清晰</div>
+          <div class="ba-box ba-after"><strong>After</strong>彩色分步手术示意图，教学适用</div>
+        </div>
+        <div class="portfolio-meta">
+          <span class="meta-tag style-tag">教学素材</span>
+          <span class="meta-tag">心血管外科</span>
+          <span class="meta-tag">手术流程</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 3 -->
+    <div class="portfolio-card">
+      <div class="portfolio-visual case-tumor">
+        <div class="placeholder-art">🔬</div>
+        <div class="overlay"><span class="style-badge">Cell Journal Style</span></div>
+      </div>
+      <div class="portfolio-body">
+        <h3>肿瘤微环境免疫逃逸机制</h3>
+        <p>呈现肿瘤细胞如何通过PD-L1/PD-1通路、调节性T细胞招募及免疫抑制性细胞因子分泌实现免疫逃逸的全景示意图。</p>
+        <div class="ba-concept">
+          <div class="ba-box ba-before"><strong>Before</strong>PPT手绘示意图，配色不专业</div>
+          <div class="ba-box ba-after"><strong>After</strong>Cell期刊风格精细机制图</div>
+        </div>
+        <div class="portfolio-meta">
+          <span class="meta-tag style-tag">Cell风格</span>
+          <span class="meta-tag">肿瘤免疫</span>
+          <span class="meta-tag">信号通路</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 4 -->
+    <div class="portfolio-card">
+      <div class="portfolio-visual case-drug">
+        <div class="placeholder-art">💊</div>
+        <div class="overlay"><span class="style-badge">Pharma Pitch Deck</span></div>
+      </div>
+      <div class="portfolio-body">
+        <h3>药物靶点结合示意图</h3>
+        <p>展示小分子药物与靶蛋白（如激酶）的结合模式，包括活性位点相互作用、氢键网络及构象变化，适用于药企路演与投资展示。</p>
+        <div class="ba-concept">
+          <div class="ba-box ba-before"><strong>Before</strong>PyMOL截图直接粘贴，缺乏美感</div>
+          <div class="ba-box ba-after"><strong>After</strong>专业路演级药物结合示意图</div>
+        </div>
+        <div class="portfolio-meta">
+          <span class="meta-tag style-tag">药企路演风格</span>
+          <span class="meta-tag">药物设计</span>
+          <span class="meta-tag">分子对接</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 5 -->
+    <div class="portfolio-card">
+      <div class="portfolio-visual case-neuro">
+        <div class="placeholder-art">🧠</div>
+        <div class="overlay"><span class="style-badge">Lancet Style</span></div>
+      </div>
+      <div class="portfolio-body">
+        <h3>神经系统退行性病变过程</h3>
+        <p>从蛋白质错误折叠、神经纤维缠结到突触丢失和神经元凋亡，全景展示阿尔茨海默病的病理进展时间线。</p>
+        <div class="ba-concept">
+          <div class="ba-box ba-before"><strong>Before</strong>多篇文献拼凑，风格不统一</div>
+          <div class="ba-box ba-after"><strong>After</strong>Lancet风格统一病理时间线图</div>
+        </div>
+        <div class="portfolio-meta">
+          <span class="meta-tag style-tag">Lancet风格</span>
+          <span class="meta-tag">神经科学</span>
+          <span class="meta-tag">病理进程</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 6 -->
+    <div class="portfolio-card">
+      <div class="portfolio-visual case-crispr">
+        <div class="placeholder-art">🧬</div>
+        <div class="overlay"><span class="style-badge">Science Style</span></div>
+      </div>
+      <div class="portfolio-body">
+        <h3>基因编辑CRISPR工作流程</h3>
+        <p>从guide RNA设计、Cas9蛋白复合物组装、DNA双链切割到同源重组修复或NHEJ，完整呈现CRISPR-Cas9基因编辑的工作机制。</p>
+        <div class="ba-concept">
+          <div class="ba-box ba-before"><strong>Before</strong>综述文献示意图过于简化</div>
+          <div class="ba-box ba-after"><strong>After</strong>Science风格详细分子流程图</div>
+        </div>
+        <div class="portfolio-meta">
+          <span class="meta-tag style-tag">Science风格</span>
+          <span class="meta-tag">基因编辑</span>
+          <span class="meta-tag">分子生物学</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- Stats callout -->
+<section style="padding-top:0;padding-bottom:40px">
+<div class="container">
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center">
+    <div style="padding:28px;background:var(--bg2);border:1px solid var(--border);border-radius:16px">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent">2h</div>
+      <div style="color:var(--text2);font-size:.85rem;margin-top:4px">平均交付时间</div>
+    </div>
+    <div style="padding:28px;background:var(--bg2);border:1px solid var(--border);border-radius:16px">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent">6</div>
+      <div style="color:var(--text2);font-size:.85rem;margin-top:4px">期刊风格覆盖</div>
+    </div>
+    <div style="padding:28px;background:var(--bg2);border:1px solid var(--border);border-radius:16px">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent">95%</div>
+      <div style="color:var(--text2);font-size:.85rem;margin-top:4px">一次性通过率</div>
+    </div>
+    <div style="padding:28px;background:var(--bg2);border:1px solid var(--border);border-radius:16px">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent">80%</div>
+      <div style="color:var(--text2);font-size:.85rem;margin-top:4px">成本节省</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section style="padding-top:0">
+<div class="container">
+  <div class="cta">
+    <h2>让你的研究成果更出众</h2>
+    <p>上传论文摘要，2小时内获得属于你的出版级医学可视化作品。首单免费。</p>
+    <div class="cta-buttons">
+      <a href="index.html#contact" class="btn-primary">免费试用</a>
+      <a href="pricing.html" class="btn-outline">查看定价 →</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">MediVisual Artist</div>
+      <p>AI驱动的医学可视化创作平台，2小时交付出版级医学插图。支持解剖建模、病理动画、论文配图自动化。</p>
+    </div>
+    <div class="footer-col">
+      <h4>产品</h4>
+      <a href="index.html#features">核心功能</a>
+      <a href="pricing.html">定价方案</a>
+      <a href="portfolio.html">案例展示</a>
+    </div>
+    <div class="footer-col">
+      <h4>公司</h4>
+      <a href="about.html">关于我们</a>
+      <a href="mailto:medivisual@mokangmedical.cn">联系方式</a>
+    </div>
+    <div class="footer-col">
+      <h4>资源</h4>
+      <a href="index.html">帮助中心</a>
+      <a href="index.html">API文档</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 MoKangMedical. All rights reserved.</span>
+    <span>MediVisual Artist &mdash; AI Medical Visualization</span>
+  </div>
+</div>
+</footer>
+</body>
+</html>

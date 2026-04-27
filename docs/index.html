@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediVisual Artist - AI驱动的医学可视化创作平台</title>
+<meta name="description" content="MediVisual Artist: AI驱动的医学可视化创作平台，2小时交付出版级医学插图。支持解剖建模、病理动画、论文配图自动化。">
+<meta property="og:title" content="MediVisual Artist - AI医学可视化平台">
+<meta property="og:description" content="2小时交付出版级医学插图，AI理解医学语义，期刊合规保障">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mokangmedical.github.io/medivisual-artist/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#00d4ff;--primary-dark:#0099cc;--accent:#ff6b35;
+  --bg:#0a0f1a;--bg2:#0d1424;--bg3:#111827;--bg4:#1a2332;
+  --text:#e8edf5;--text2:#94a3b8;--text3:#64748b;
+  --border:#1e293b;--border2:#334155;
+  --gradient:linear-gradient(135deg,#00d4ff,#7c3aed,#ff6b35);
+  --glow:0 0 40px rgba(0,212,255,.15);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter','Noto Sans SC',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:var(--primary);text-decoration:none;transition:.3s}
+a:hover{color:#fff}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,15,26,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{color:var(--text2);font-size:.9rem;font-weight:500;transition:.3s}
+.nav-links a:hover{color:var(--primary)}
+.nav-cta{background:var(--primary);color:var(--bg)!important;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.85rem;transition:.3s}
+.nav-cta:hover{background:#fff;transform:translateY(-1px)}
+.mobile-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:64px}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 30% 50%,rgba(0,212,255,.08),transparent 50%),radial-gradient(ellipse at 70% 50%,rgba(124,58,237,.06),transparent 50%);animation:heroPulse 8s ease-in-out infinite}
+@keyframes heroPulse{0%,100%{opacity:.6}50%{opacity:1}}
+.hero-content{position:relative;z-index:2;max-width:800px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.3);border-radius:100px;font-size:.8rem;color:var(--primary);margin-bottom:24px;font-weight:500}
+.hero-badge .dot{width:6px;height:6px;background:var(--primary);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Space Grotesk','Noto Sans SC',sans-serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:1.1;margin-bottom:20px;letter-spacing:-.02em}
+.hero h1 span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.15rem;color:var(--text2);max-width:600px;margin-bottom:36px;line-height:1.8}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--primary);color:var(--bg);border-radius:10px;font-weight:600;font-size:1rem;transition:.3s;border:none;cursor:pointer}
+.btn-primary:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,212,255,.3)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:transparent;color:var(--text);border:1px solid var(--border2);border-radius:10px;font-weight:500;font-size:1rem;transition:.3s;cursor:pointer}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:80px 0}
+.stat{text-align:center;padding:32px;background:var(--bg2);border:1px solid var(--border);border-radius:16px;transition:.3s}
+.stat:hover{border-color:var(--primary);transform:translateY(-4px);box-shadow:var(--glow)}
+.stat-num{font-family:'Space Grotesk',sans-serif;font-size:2.5rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-label{color:var(--text2);font-size:.9rem;margin-top:4px}
+
+/* Section */
+section{padding:100px 0}
+.section-label{display:inline-block;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;color:var(--primary);margin-bottom:12px;padding:4px 12px;background:rgba(0,212,255,.1);border-radius:4px}
+.section-title{font-family:'Space Grotesk','Noto Sans SC',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;margin-bottom:16px}
+.section-desc{color:var(--text2);max-width:600px;font-size:1.05rem;line-height:1.8}
+
+/* Features */
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.feature-card{padding:36px;background:var(--bg2);border:1px solid var(--border);border-radius:16px;transition:.4s;position:relative;overflow:hidden}
+.feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:0;transition:.3s}
+.feature-card:hover{border-color:var(--primary);transform:translateY(-6px);box-shadow:var(--glow)}
+.feature-card:hover::before{opacity:1}
+.feature-icon{width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:rgba(0,212,255,.1);border-radius:14px;font-size:1.5rem;margin-bottom:20px}
+.feature-card h3{font-size:1.15rem;font-weight:600;margin-bottom:10px}
+.feature-card p{color:var(--text2);font-size:.9rem;line-height:1.7}
+
+/* Workflow */
+.workflow{background:var(--bg2);border-radius:24px;padding:60px;margin-top:48px;border:1px solid var(--border)}
+.workflow-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:40px;position:relative}
+.workflow-steps::before{content:'';position:absolute;top:40px;left:16.67%;right:16.67%;height:2px;background:var(--gradient);opacity:.3}
+.step{text-align:center;position:relative}
+.step-num{width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:var(--bg);border:2px solid var(--primary);border-radius:50%;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--primary);margin:0 auto 16px;position:relative;z-index:2}
+.step h3{font-size:1.05rem;font-weight:600;margin-bottom:8px}
+.step p{color:var(--text2);font-size:.85rem;line-height:1.6}
+
+/* Pain Points */
+.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
+.pain-card{padding:32px;background:var(--bg2);border:1px solid var(--border);border-radius:16px;display:flex;gap:20px;align-items:flex-start;transition:.3s}
+.pain-card:hover{border-color:var(--primary)}
+.pain-icon{width:44px;height:44px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(255,107,53,.1);border-radius:12px;font-size:1.2rem}
+.pain-card h3{font-size:1rem;font-weight:600;margin-bottom:6px}
+.pain-card p{color:var(--text2);font-size:.85rem;line-height:1.6}
+
+/* Comparison */
+.comparison{margin-top:48px;overflow-x:auto}
+.comp-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.comp-table th,.comp-table td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--border)}
+.comp-table th{background:var(--bg3);color:var(--text2);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}
+.comp-table td:first-child{font-weight:500}
+.comp-table tr:hover{background:rgba(0,212,255,.03)}
+.check{color:#22c55e;font-weight:600}
+.cross{color:#ef4444;font-weight:600}
+.partial{color:#f59e0b;font-weight:600}
+
+/* Testimonials */
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.testimonial{padding:32px;background:var(--bg2);border:1px solid var(--border);border-radius:16px;transition:.3s}
+.testimonial:hover{border-color:var(--primary)}
+.testimonial-quote{color:var(--text2);font-size:.9rem;line-height:1.8;margin-bottom:20px;font-style:italic}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.testimonial-avatar{width:40px;height:40px;background:var(--gradient);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:600;color:var(--bg)}
+.testimonial-name{font-size:.85rem;font-weight:600}
+.testimonial-role{font-size:.75rem;color:var(--text3)}
+
+/* Pricing */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.price-card{padding:40px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;position:relative;transition:.3s}
+.price-card.popular{border-color:var(--primary);box-shadow:var(--glow)}
+.price-card.popular::before{content:'推荐';position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:4px 16px;background:var(--primary);color:var(--bg);font-size:.75rem;font-weight:600;border-radius:100px}
+.price-card:hover{transform:translateY(-4px)}
+.price-name{font-size:1.1rem;font-weight:600;margin-bottom:8px}
+.price-amount{font-family:'Space Grotesk',sans-serif;font-size:2.5rem;font-weight:700;margin-bottom:4px}
+.price-amount span{font-size:.9rem;color:var(--text2);font-weight:400}
+.price-desc{color:var(--text2);font-size:.85rem;margin-bottom:24px}
+.price-features{list-style:none;margin-bottom:32px}
+.price-features li{padding:8px 0;font-size:.85rem;color:var(--text2);display:flex;align-items:center;gap:8px}
+.price-features li::before{content:'--';color:var(--primary);font-weight:600}
+.price-btn{display:block;width:100%;padding:14px;text-align:center;border-radius:10px;font-weight:600;font-size:.9rem;transition:.3s;cursor:pointer;border:none}
+.price-btn.primary{background:var(--primary);color:var(--bg)}
+.price-btn.primary:hover{background:#fff}
+.price-btn.outline{background:transparent;color:var(--text);border:1px solid var(--border2)}
+.price-btn.outline:hover{border-color:var(--primary);color:var(--primary)}
+
+/* CTA */
+.cta{background:var(--bg2);border:1px solid var(--border);border-radius:24px;padding:80px 60px;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(0,212,255,.1),transparent 70%);border-radius:50%}
+.cta h2{font-family:'Space Grotesk','Noto Sans SC',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;margin-bottom:16px}
+.cta p{color:var(--text2);max-width:500px;margin:0 auto 32px;font-size:1rem}
+.cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* Footer */
+footer{padding:60px 0 32px;border-top:1px solid var(--border)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand .logo{font-size:1.2rem;margin-bottom:12px}
+.footer-brand p{color:var(--text2);font-size:.85rem;line-height:1.7;max-width:300px}
+.footer-col h4{font-size:.85rem;font-weight:600;margin-bottom:16px;text-transform:uppercase;letter-spacing:.05em}
+.footer-col a{display:block;color:var(--text2);font-size:.85rem;padding:4px 0;transition:.3s}
+.footer-col a:hover{color:var(--primary)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--border);font-size:.8rem;color:var(--text3)}
+
+/* Responsive */
+@media(max-width:1024px){
+  .features-grid,.testimonials-grid,.pricing-grid{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .mobile-toggle{display:block}
+  .features-grid,.testimonials-grid,.pricing-grid,.pain-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .workflow-steps{grid-template-columns:1fr;gap:24px}
+  .workflow-steps::before{display:none}
+  .hero-buttons{flex-direction:column}
+  .footer-grid{grid-template-columns:1fr}
+  .comp-table{font-size:.8rem}
+  .comp-table th,.comp-table td{padding:10px 12px}
+}
+</style>
+</head>
+<body>
+<!-- Nav -->
+<nav>
+<div class="nav-inner">
+  <a href="index.html" class="logo">MediVisual Artist</a>
+  <ul class="nav-links">
+    <li><a href="#features">功能</a></li>
+    <li><a href="#workflow">工作流</a></li>
+    <li><a href="#comparison">对比</a></li>
+    <li><a href="pricing.html">定价</a></li>
+    <li><a href="about.html">关于</a></li>
+    <li><a href="portfolio.html">案例</a></li>
+    <li><a href="#contact" class="nav-cta">免费试用</a></li>
+  </ul>
+  <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">&#9776;</button>
+</div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+<div class="container">
+  <div class="hero-content">
+    <div class="hero-badge"><span class="dot"></span>AI驱动 -- 2小时交付出版级医学插图</div>
+    <h1>医学可视化<br><span>创作新范式</span></h1>
+    <p>MediVisual Artist 利用AI语义理解技术，将医学论文摘要转化为Nature/Cell级插图。告别2-3天的等待，2小时即可获得专业医学可视化作品。</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">开始创作 --</a>
+      <a href="#workflow" class="btn-outline">了解工作流 --</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Stats -->
+<section style="padding:0 0 40px">
+<div class="container">
+  <div class="stats">
+    <div class="stat"><div class="stat-num">2h</div><div class="stat-label">交付周期</div></div>
+    <div class="stat"><div class="stat-num">72%</div><div class="stat-label">研究者面临插图瓶颈</div></div>
+    <div class="stat"><div class="stat-num">95%</div><div class="stat-label">期刊合规率</div></div>
+    <div class="stat"><div class="stat-num">30s</div><div class="stat-label">AI生成响应时间</div></div>
+  </div>
+</div>
+</section>
+
+<!-- Pain Points -->
+<section id="pain">
+<div class="container">
+  <span class="section-label">痛点洞察</span>
+  <h2 class="section-title">为什么医学研究者需要MediVisual Artist?</h2>
+  <p class="section-desc">基于120+份问卷、20+深度访谈、12+可用性测试的用户研究</p>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-icon">&#9200;</div>
+      <div><h3>插图制作周期过长</h3><p>传统医学插图需要2-3天，严重影响论文产出节奏。72%的研究者表示这是最大的瓶颈。</p></div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">&#128269;</div>
+      <div><h3>反复修改沟通成本高</h3><p>58%的研究者将修改返工和跨团队沟通列为首要痛点。每轮修改都意味着额外的时间和费用。</p></div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">&#128220;</div>
+      <div><h3>期刊合规难以保障</h3><p>61%的研究者关注Nature/Cell等顶刊的格式合规性。不合规的插图直接导致退稿或延迟。</p></div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">&#128176;</div>
+      <div><h3>外包成本高昂</h3><p>专业医学插画师报价高、排期长。年轻PI和博士生难以负担，且无法保证最终效果。</p></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Features -->
+<section id="features" style="background:var(--bg2)">
+<div class="container">
+  <span class="section-label">核心功能</span>
+  <h2 class="section-title">AI理解医学语义，而非简单图像生成</h2>
+  <p class="section-desc">深度医学语义解析 + 期刊合规引擎 + 多风格输出</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">&#129504;</div>
+      <h3>医学实体识别</h3>
+      <p>从论文摘要中自动提取医学实体、解剖结构、病理过程，构建精准的语义模型。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#127912;</div>
+      <h3>多风格输出</h3>
+      <p>期刊论文风格、教学课件风格、商业路演风格一键切换，满足不同场景需求。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#9989;</div>
+      <h3>期刊合规审查</h3>
+      <p>内置Nature/Cell/Lancet等顶刊格式规范，自动生成符合要求的高清TIFF/EPS输出。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#128260;</div>
+      <h3>快速迭代</h3>
+      <p>30秒生成响应，支持3轮以上迭代。通过Prompt微调实现精准的视觉表达。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#128196;</div>
+      <h3>论文配图自动化</h3>
+      <p>从Abstract到Figure全流程自动化，大幅降低科研可视化门槛。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#127760;</div>
+      <h3>中英双语支持</h3>
+      <p>专为中文医学研究者优化的工作流，同时支持英文期刊投稿需求。</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Workflow -->
+<section id="workflow">
+<div class="container">
+  <span class="section-label">工作流程</span>
+  <h2 class="section-title">三步完成出版级医学插图</h2>
+  <p class="section-desc">从论文摘要到专业插图，只需三步</p>
+  <div class="workflow">
+    <div class="workflow-steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>逻辑建模</h3>
+        <p>输入论文摘要，AI自动解析医学实体、解剖关系、病理过程，构建语义图谱。</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Prompt生成</h3>
+        <p>基于语义模型生成结构化Prompt，包含风格、构图、标注等完整描述。</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>视觉执行</h3>
+        <p>AI图像生成 + 规则审查引擎，输出300/600 DPI的TIFF/EPS高清文件。</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Comparison -->
+<section id="comparison" style="background:var(--bg2)">
+<div class="container">
+  <span class="section-label">竞品对比</span>
+  <h2 class="section-title">为什么选择MediVisual Artist?</h2>
+  <div class="comparison">
+    <table class="comp-table">
+      <thead>
+        <tr><th>能力维度</th><th>MediVisual Artist</th><th>BioRender</th><th>Adobe Illustrator</th><th>人工外包</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>交付周期</td><td class="check">2小时</td><td class="partial">半天-1天</td><td class="cross">需学习成本</td><td class="cross">2-5天</td></tr>
+        <tr><td>医学语义理解</td><td class="check">AI深度理解</td><td class="partial">模板匹配</td><td class="cross">无</td><td class="check">人工理解</td></tr>
+        <tr><td>期刊合规保障</td><td class="check">自动审查</td><td class="partial">部分模板</td><td class="cross">手动检查</td><td class="partial">依赖画师</td></tr>
+        <tr><td>中文支持</td><td class="check">原生支持</td><td class="cross">不支持</td><td class="partial">手动输入</td><td class="check">支持</td></tr>
+        <tr><td>迭代成本</td><td class="check">极低(Prompt调整)</td><td class="partial">中等</td><td class="cross">高</td><td class="cross">高</td></tr>
+        <tr><td>输出格式</td><td class="check">TIFF/EPS/300-600DPI</td><td class="check">PNG/PDF</td><td class="check">AI/PDF</td><td class="check">按需</td></tr>
+        <tr><td>月均成本</td><td class="check">订阅制(低门槛)</td><td class="cross">$39-$99/月</td><td class="cross">$22.99/月</td><td class="cross">单次800+</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+
+<!-- Testimonials -->
+<section>
+<div class="container">
+  <span class="section-label">用户反馈</span>
+  <h2 class="section-title">来自研究者的真实评价</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial">
+      <div class="testimonial-quote">"以前画一张病理过程图要找外包等3天，现在2小时就搞定，质量完全达到Nature标准。"</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">L</div>
+        <div><div class="testimonial-name">李博士</div><div class="testimonial-role">某985高校生物医学博士后</div></div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-quote">"最打动我的是对医学语义的理解能力，不是简单的图像拼接，而是真正理解了我的研究内容。"</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">W</div>
+        <div><div class="testimonial-name">王教授</div><div class="testimonial-role">三甲医院科研处主任</div></div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-quote">"作为博士生，预算有限。MediVisual Artist的订阅制让我用得起专业级医学插图，论文产出效率翻倍。"</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">Z</div>
+        <div><div class="testimonial-name">张同学</div><div class="testimonial-role">临床医学博士在读</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" style="background:var(--bg2)">
+<div class="container">
+  <span class="section-label">定价方案</span>
+  <h2 class="section-title">灵活定价，按需选择</h2>
+  <p class="section-desc">从免费试用到企业定制，满足不同规模需求</p>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-name">Starter</div>
+      <div class="price-amount">Free<span></span></div>
+      <div class="price-desc">体验AI医学可视化能力</div>
+      <ul class="price-features">
+        <li>每月5张免费生成</li>
+        <li>基础风格模板</li>
+        <li>720p分辨率输出</li>
+        <li>社区支持</li>
+      </ul>
+      <a href="#contact" class="price-btn outline">免费开始</a>
+    </div>
+    <div class="price-card popular">
+      <div class="price-name">Professional</div>
+      <div class="price-amount">299<span>/月</span></div>
+      <div class="price-desc">专业研究者的首选方案</div>
+      <ul class="price-features">
+        <li>无限生成次数</li>
+        <li>全部风格模板</li>
+        <li>600 DPI TIFF/EPS输出</li>
+        <li>期刊合规审查</li>
+        <li>3轮迭代修改</li>
+        <li>优先技术支持</li>
+      </ul>
+      <a href="#contact" class="price-btn primary">立即订阅</a>
+    </div>
+    <div class="price-card">
+      <div class="price-name">Enterprise</div>
+      <div class="price-amount">定制<span></span></div>
+      <div class="price-desc">面向机构的专属方案</div>
+      <ul class="price-features">
+        <li>无限生成 + API接入</li>
+        <li>自定义品牌模板</li>
+        <li>团队协作管理</li>
+        <li>专属客户成功经理</li>
+        <li>SLA保障</li>
+        <li>私有化部署可选</li>
+      </ul>
+      <a href="#contact" class="price-btn outline">联系销售</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section id="contact">
+<div class="container">
+  <div class="cta">
+    <h2>准备好革新你的医学可视化工作流了吗?</h2>
+    <p>加入数百位医学研究者的行列，体验2小时交付出版级插图的效率</p>
+    <div class="cta-buttons">
+      <a href="mailto:medivisual@mokangmedical.cn" class="btn-primary">联系我们 --</a>
+      <a href="features.html" class="btn-outline">了解更多功能</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">MediVisual Artist</div>
+      <p>AI驱动的医学可视化创作平台。深度医学语义理解，2小时交付出版级插图，期刊合规保障。</p>
+    </div>
+    <div class="footer-col">
+      <h4>产品</h4>
+      <a href="features.html">功能详情</a>
+      <a href="pricing.html">定价方案</a>
+      <a href="portfolio.html">案例展示</a>
+      <a href="#">API文档</a>
+    </div>
+    <div class="footer-col">
+      <h4>关于</h4>
+      <a href="about.html">团队介绍</a>
+      <a href="about.html#vision">愿景使命</a>
+      <a href="#">加入我们</a>
+      <a href="#">新闻动态</a>
+    </div>
+    <div class="footer-col">
+      <h4>支持</h4>
+      <a href="mailto:medivisual@mokangmedical.cn">联系我们</a>
+      <a href="#">帮助中心</a>
+      <a href="#">隐私政策</a>
+      <a href="#">服务条款</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>2026 MediVisual Artist. A MoKangMedical Project.</span>
+    <span>medivisual@mokangmedical.cn</span>
+  </div>
+</div>
+</footer>
+
+<style>
+@media(max-width:768px){
+  .nav-links{position:fixed;top:64px;left:0;right:0;background:rgba(10,15,26,.98);backdrop-filter:blur(20px);flex-direction:column;padding:24px;gap:16px;border-bottom:1px solid var(--border);display:none}
+  .nav-links.show{display:flex}
+}
+</style>
+</body>
+</html>

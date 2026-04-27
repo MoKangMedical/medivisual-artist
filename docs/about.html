@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于 - MediVisual Artist</title>
+<meta name="description" content="了解 MediVisual Artist 团队与愿景，AI驱动医学可视化民主化。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#00d4ff;--primary-dark:#0099cc;--accent:#ff6b35;
+  --bg:#0a0f1a;--bg2:#0d1424;--bg3:#111827;--bg4:#1a2332;
+  --text:#e8edf5;--text2:#94a3b8;--text3:#64748b;
+  --border:#1e293b;--border2:#334155;
+  --gradient:linear-gradient(135deg,#00d4ff,#7c3aed,#ff6b35);
+  --glow:0 0 40px rgba(0,212,255,.15);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter','Noto Sans SC',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:var(--primary);text-decoration:none;transition:.3s}
+a:hover{color:#fff}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,15,26,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{color:var(--text2);font-size:.9rem;font-weight:500;transition:.3s}
+.nav-links a:hover,.nav-links a.active{color:var(--primary)}
+.nav-cta{background:var(--primary);color:var(--bg)!important;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.85rem;transition:.3s}
+.nav-cta:hover{background:#fff;transform:translateY(-1px)}
+.mobile-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+
+/* Hero */
+.hero{min-height:50vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:120px;padding-bottom:60px}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 30% 50%,rgba(0,212,255,.08),transparent 50%),radial-gradient(ellipse at 70% 50%,rgba(124,58,237,.06),transparent 50%);animation:heroPulse 8s ease-in-out infinite}
+@keyframes heroPulse{0%,100%{opacity:.6}50%{opacity:1}}
+.hero-content{position:relative;z-index:2;max-width:800px}
+.hero h1{font-family:'Space Grotesk','Noto Sans SC',sans-serif;font-size:clamp(2.5rem,5vw,3.5rem);font-weight:800;line-height:1.1;margin-bottom:20px;letter-spacing:-.02em}
+.hero h1 span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.15rem;color:var(--text2);max-width:600px;margin-bottom:0;line-height:1.8}
+
+/* Section */
+section{padding:100px 0}
+.section-label{display:inline-block;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;color:var(--primary);margin-bottom:12px;padding:4px 12px;background:rgba(0,212,255,.1);border-radius:4px}
+.section-title{font-family:'Space Grotesk','Noto Sans SC',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;margin-bottom:16px}
+.section-desc{color:var(--text2);max-width:600px;font-size:1.05rem;line-height:1.8}
+
+/* Vision/Mission Cards */
+.vm-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
+.vm-card{padding:40px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;position:relative;overflow:hidden;transition:.3s}
+.vm-card:hover{border-color:var(--primary);transform:translateY(-4px);box-shadow:var(--glow)}
+.vm-card .icon{width:60px;height:60px;display:flex;align-items:center;justify-content:center;background:rgba(0,212,255,.1);border-radius:16px;font-size:1.6rem;margin-bottom:20px}
+.vm-card h3{font-size:1.3rem;font-weight:700;margin-bottom:12px}
+.vm-card p{color:var(--text2);font-size:.95rem;line-height:1.8}
+.vm-card.highlight{border-color:rgba(124,58,237,.4);background:linear-gradient(135deg,var(--bg2),rgba(124,58,237,.05))}
+.vm-card.highlight .icon{background:rgba(124,58,237,.15)}
+
+/* Team */
+.team-card{max-width:800px;margin:48px auto 0;padding:48px;background:var(--bg2);border:1px solid var(--border);border-radius:24px;display:flex;gap:40px;align-items:center;transition:.3s}
+.team-card:hover{border-color:var(--primary);box-shadow:var(--glow)}
+.team-avatar{width:120px;height:120px;flex-shrink:0;background:var(--gradient);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;font-weight:700;color:var(--bg)}
+.team-info h3{font-size:1.4rem;font-weight:700;margin-bottom:4px}
+.team-info .title{color:var(--primary);font-size:.95rem;font-weight:500;margin-bottom:16px}
+.team-info p{color:var(--text2);font-size:.9rem;line-height:1.8}
+.team-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.team-tag{padding:4px 12px;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.2);border-radius:100px;font-size:.75rem;color:var(--primary);font-weight:500}
+
+/* Hiring */
+.hiring-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.hiring-card{padding:36px;background:var(--bg2);border:1px solid var(--border);border-radius:16px;transition:.3s;position:relative;overflow:hidden}
+.hiring-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient);opacity:0;transition:.3s}
+.hiring-card:hover{border-color:var(--primary);transform:translateY(-4px);box-shadow:var(--glow)}
+.hiring-card:hover::before{opacity:1}
+.hiring-card .badge{display:inline-block;padding:4px 10px;background:rgba(255,107,53,.1);border:1px solid rgba(255,107,53,.3);border-radius:100px;font-size:.7rem;color:var(--accent);font-weight:600;margin-bottom:16px;text-transform:uppercase;letter-spacing:.05em}
+.hiring-card h3{font-size:1.1rem;font-weight:600;margin-bottom:10px}
+.hiring-card p{color:var(--text2);font-size:.85rem;line-height:1.7}
+
+/* Company Info */
+.company-card{max-width:800px;margin:48px auto 0;padding:40px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;text-align:center}
+.company-card .company-name{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:600;margin-bottom:8px;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block}
+.company-card p{color:var(--text2);font-size:.9rem;line-height:1.8;margin-bottom:20px}
+.company-card .contact{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.3);border-radius:100px;color:var(--primary);font-size:.9rem;font-weight:500;transition:.3s}
+.company-card .contact:hover{background:var(--primary);color:var(--bg)}
+
+/* CTA */
+.cta{background:var(--bg2);border:1px solid var(--border);border-radius:24px;padding:80px 60px;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(0,212,255,.1),transparent 70%);border-radius:50%}
+.cta h2{font-family:'Space Grotesk','Noto Sans SC',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;margin-bottom:16px}
+.cta p{color:var(--text2);max-width:500px;margin:0 auto 32px;font-size:1rem}
+.cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--primary);color:var(--bg);border-radius:10px;font-weight:600;font-size:1rem;transition:.3s;border:none;cursor:pointer}
+.btn-primary:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,212,255,.3)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:transparent;color:var(--text);border:1px solid var(--border2);border-radius:10px;font-weight:500;font-size:1rem;transition:.3s;cursor:pointer}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+
+/* Footer */
+footer{padding:60px 0 32px;border-top:1px solid var(--border)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand .logo{font-size:1.2rem;margin-bottom:12px}
+.footer-brand p{color:var(--text2);font-size:.85rem;line-height:1.7;max-width:300px}
+.footer-col h4{font-size:.85rem;font-weight:600;margin-bottom:16px;text-transform:uppercase;letter-spacing:.05em}
+.footer-col a{display:block;color:var(--text2);font-size:.85rem;padding:4px 0;transition:.3s}
+.footer-col a:hover{color:var(--primary)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--border);font-size:.8rem;color:var(--text3)}
+
+/* Responsive */
+@media(max-width:1024px){
+  .vm-grid,.hiring-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .mobile-toggle{display:block}
+  .vm-grid,.hiring-grid{grid-template-columns:1fr}
+  .team-card{flex-direction:column;text-align:center}
+  .hero-buttons{flex-direction:column}
+  .footer-grid{grid-template-columns:1fr}
+  .cta{padding:60px 30px}
+}
+</style>
+</head>
+<body>
+<!-- Nav -->
+<nav>
+<div class="nav-inner">
+  <a href="index.html" class="logo">MediVisual Artist</a>
+  <ul class="nav-links">
+    <li><a href="index.html">首页</a></li>
+    <li><a href="index.html#features">功能</a></li>
+    <li><a href="pricing.html">定价</a></li>
+    <li><a href="about.html" class="active">关于</a></li>
+    <li><a href="portfolio.html">案例</a></li>
+    <li><a href="index.html#contact" class="nav-cta">免费试用</a></li>
+  </ul>
+  <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">&#9776;</button>
+</div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+<div class="container">
+  <div class="hero-content">
+    <h1>关于 <span>MediVisual Artist</span></h1>
+    <p>我们致力于用AI技术降低医学可视化的门槛，让每一位医学研究者都能轻松获得出版级可视化作品。</p>
+  </div>
+</div>
+</section>
+
+<!-- Vision & Mission -->
+<section style="padding-top:0">
+<div class="container">
+  <div class="vm-grid">
+    <div class="vm-card">
+      <div class="icon">🔭</div>
+      <h3>愿景</h3>
+      <p>让每一位医学研究者都能轻松获得出版级可视化作品。不论经费多少、不论设计经验，高质量医学插图不再是少数人的特权。</p>
+    </div>
+    <div class="vm-card highlight">
+      <div class="icon">🚀</div>
+      <h3>使命</h3>
+      <p>通过AI驱动的医学可视化民主化，将原本需要数天、花费数千元的专业医学插图制作流程，压缩到2小时、百元以内完成，让全球医学研究者聚焦于科学本身。</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Team -->
+<section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+<div class="container">
+  <div style="text-align:center">
+    <span class="section-label">核心团队</span>
+    <h2 class="section-title">创始团队</h2>
+    <p class="section-desc" style="margin:0 auto">医学与技术的交叉点，是我们出发的地方。</p>
+  </div>
+  <div class="team-card">
+    <div class="team-avatar">张</div>
+    <div class="team-info">
+      <h3>张麟 Zhang Lin</h3>
+      <div class="title">项目负责人 / Project Lead</div>
+      <p>医学博士，深耕医学教育与科研可视化领域。负责整体战略规划、产品方向把控与学术资源对接。对医学出版流程与期刊配图规范有深刻理解，致力于用技术手段弥合医学研究与高质量可视化之间的鸿沟。</p>
+      <div class="team-tags">
+        <span class="team-tag">战略规划</span>
+        <span class="team-tag">产品方向</span>
+        <span class="team-tag">学术资源</span>
+        <span class="team-tag">医学博士</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Hiring Plan -->
+<section>
+<div class="container">
+  <div style="text-align:center">
+    <span class="section-label">人才招募</span>
+    <h2 class="section-title">未来12个月招募计划</h2>
+    <p class="section-desc" style="margin:0 auto">我们正在寻找志同道合的伙伴，一起改变医学可视化的未来。</p>
+  </div>
+  <div class="hiring-grid">
+    <div class="hiring-card">
+      <span class="badge">12个月内</span>
+      <h3>技术负责人 Tech Lead</h3>
+      <p>负责AI模型研发、图像生成管线搭建与优化。要求具备计算机视觉或生成式AI领域经验，熟悉扩散模型与医学图像处理。</p>
+    </div>
+    <div class="hiring-card">
+      <span class="badge">12个月内</span>
+      <h3>产品负责人 Product Lead</h3>
+      <p>负责产品规划、用户体验设计与需求分析。需要深入理解医学研究者的工作流程，将复杂需求转化为简洁产品体验。</p>
+    </div>
+    <div class="hiring-card">
+      <span class="badge">12个月内</span>
+      <h3>市场负责人 Market Lead</h3>
+      <p>负责市场推广、品牌建设与学术渠道拓展。需具备医学/科研行业市场经验，了解学术社群传播规律。</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Company Info -->
+<section style="padding-bottom:60px">
+<div class="container">
+  <div class="company-card">
+    <div class="company-name">墨康医疗 MoKangMedical</div>
+    <p>MoKangMedical（墨康医疗）专注于AI赋能医学教育与科研工具，MediVisual Artist是旗下首个面向全球医学研究者的可视化创作平台。</p>
+    <a href="mailto:medivisual@mokangmedical.cn" class="contact">✉ medivisual@mokangmedical.cn</a>
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section style="padding-top:0">
+<div class="container">
+  <div class="cta">
+    <h2>加入我们，或开始创作</h2>
+    <p>无论你是想成为团队一员，还是想体验AI医学可视化，我们都期待与你相遇。</p>
+    <div class="cta-buttons">
+      <a href="mailto:medivisual@mokangmedical.cn" class="btn-primary">联系我们</a>
+      <a href="portfolio.html" class="btn-outline">查看案例 →</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">MediVisual Artist</div>
+      <p>AI驱动的医学可视化创作平台，2小时交付出版级医学插图。支持解剖建模、病理动画、论文配图自动化。</p>
+    </div>
+    <div class="footer-col">
+      <h4>产品</h4>
+      <a href="index.html#features">核心功能</a>
+      <a href="pricing.html">定价方案</a>
+      <a href="portfolio.html">案例展示</a>
+    </div>
+    <div class="footer-col">
+      <h4>公司</h4>
+      <a href="about.html">关于我们</a>
+      <a href="mailto:medivisual@mokangmedical.cn">联系方式</a>
+    </div>
+    <div class="footer-col">
+      <h4>资源</h4>
+      <a href="index.html">帮助中心</a>
+      <a href="index.html">API文档</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 MoKangMedical. All rights reserved.</span>
+    <span>MediVisual Artist &mdash; AI Medical Visualization</span>
+  </div>
+</div>
+</footer>
+</body>
+</html>

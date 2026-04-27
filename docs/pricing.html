@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>定价方案 - MediVisual Artist</title>
+<meta name="description" content="MediVisual Artist 定价方案：从免费试用到企业定制，灵活满足不同规模医学可视化需求。">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#00d4ff;--primary-dark:#0099cc;--accent:#ff6b35;--bg:#0a0f1a;--bg2:#0d1424;--bg3:#111827;--bg4:#1a2332;--text:#e8edf5;--text2:#94a3b8;--text3:#64748b;--border:#1e293b;--border2:#334155;--gradient:linear-gradient(135deg,#00d4ff,#7c3aed,#ff6b35);--glow:0 0 40px rgba(0,212,255,.15)}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Noto Sans SC',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:var(--primary);text-decoration:none;transition:.3s}a:hover{color:#fff}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,15,26,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:32px;list-style:none}.nav-links a{color:var(--text2);font-size:.9rem;font-weight:500}.nav-links a:hover{color:var(--primary)}
+.nav-cta{background:var(--primary);color:var(--bg)!important;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.85rem}.nav-cta:hover{background:#fff}
+.mobile-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+.hero{padding:140px 0 80px;text-align:center}
+.hero h1{font-family:'Space Grotesk','Noto Sans SC',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:16px}
+.hero h1 span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:var(--text2);max-width:600px;margin:0 auto;font-size:1.05rem}
+.section-label{display:inline-block;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;color:var(--primary);margin-bottom:12px;padding:4px 12px;background:rgba(0,212,255,.1);border-radius:4px}
+.section-title{font-family:'Space Grotesk','Noto Sans SC',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;margin-bottom:16px}
+.section-desc{color:var(--text2);max-width:600px;font-size:1.05rem;line-height:1.8;margin-bottom:48px}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.price-card{padding:40px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;position:relative;transition:.3s}
+.price-card.popular{border-color:var(--primary);box-shadow:var(--glow)}
+.price-card.popular::before{content:'推荐方案';position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:4px 16px;background:var(--primary);color:var(--bg);font-size:.75rem;font-weight:600;border-radius:100px;white-space:nowrap}
+.price-card:hover{transform:translateY(-4px)}
+.price-name{font-size:1.15rem;font-weight:600;margin-bottom:8px}
+.price-amount{font-family:'Space Grotesk',sans-serif;font-size:2.8rem;font-weight:700;margin-bottom:4px}
+.price-amount span{font-size:.9rem;color:var(--text2);font-weight:400}
+.price-desc{color:var(--text2);font-size:.85rem;margin-bottom:24px}
+.price-features{list-style:none;margin-bottom:32px}
+.price-features li{padding:8px 0;font-size:.85rem;color:var(--text2);display:flex;align-items:center;gap:8px}
+.price-features li::before{content:'--';color:var(--primary);font-weight:600;font-size:1rem}
+.price-btn{display:block;width:100%;padding:14px;text-align:center;border-radius:10px;font-weight:600;font-size:.9rem;transition:.3s;cursor:pointer;border:none;text-decoration:none}
+.price-btn.primary{background:var(--primary);color:var(--bg)}.price-btn.primary:hover{background:#fff}
+.price-btn.outline{background:transparent;color:var(--text);border:1px solid var(--border2)}.price-btn.outline:hover{border-color:var(--primary);color:var(--primary)}
+
+/* Custom Pricing */
+.custom-section{margin-top:80px;padding:60px;background:var(--bg2);border:1px solid var(--border);border-radius:20px}
+.custom-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:48px;align-items:center}
+.custom-info h3{font-size:1.5rem;font-weight:700;margin-bottom:16px}
+.custom-info p{color:var(--text2);line-height:1.8;margin-bottom:20px}
+.custom-features{list-style:none}.custom-features li{padding:8px 0;color:var(--text2);font-size:.9rem;display:flex;align-items:center;gap:10px}
+.custom-features li::before{content:'';width:8px;height:8px;background:var(--primary);border-radius:50%;flex-shrink:0}
+.pricing-formula{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:32px}
+.pricing-formula h4{font-size:1rem;font-weight:600;margin-bottom:16px;color:var(--primary)}
+.formula-item{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);font-size:.85rem}
+.formula-item:last-child{border:none}
+.formula-item .label{color:var(--text2)}.formula-item .value{font-weight:600;color:var(--text)}
+
+/* FAQ */
+.faq{margin-top:80px}
+.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.faq-item{padding:28px;background:var(--bg2);border:1px solid var(--border);border-radius:16px;cursor:pointer;transition:.3s}
+.faq-item:hover{border-color:var(--primary)}
+.faq-q{font-weight:600;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:1.2rem;color:var(--primary);transition:.3s}
+.faq-item.open .faq-q::after{content:'-'}
+.faq-a{color:var(--text2);font-size:.85rem;line-height:1.7;display:none}
+.faq-item.open .faq-a{display:block}
+
+/* CTA */
+.cta{margin-top:80px;background:var(--bg2);border:1px solid var(--border);border-radius:24px;padding:80px 60px;text-align:center}
+.cta h2{font-family:'Space Grotesk','Noto Sans SC',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;margin-bottom:16px}
+.cta p{color:var(--text2);max-width:500px;margin:0 auto 32px}
+.cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--primary);color:var(--bg);border-radius:10px;font-weight:600;font-size:1rem;transition:.3s;border:none;cursor:pointer;text-decoration:none}.btn-primary:hover{background:#fff}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:transparent;color:var(--text);border:1px solid var(--border2);border-radius:10px;font-weight:500;font-size:1rem;transition:.3s;cursor:pointer;text-decoration:none}.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+
+footer{padding:60px 0 32px;border-top:1px solid var(--border);margin-top:80px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand .logo{font-size:1.2rem;margin-bottom:12px}
+.footer-brand p{color:var(--text2);font-size:.85rem;line-height:1.7;max-width:300px}
+.footer-col h4{font-size:.85rem;font-weight:600;margin-bottom:16px;text-transform:uppercase;letter-spacing:.05em}
+.footer-col a{display:block;color:var(--text2);font-size:.85rem;padding:4px 0}.footer-col a:hover{color:var(--primary)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--border);font-size:.8rem;color:var(--text3)}
+@media(max-width:1024px){.pricing-grid,.faq-grid{grid-template-columns:repeat(2,1fr)}.custom-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-links{display:none}.mobile-toggle{display:block}.pricing-grid,.faq-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+  <a href="index.html" class="logo">MediVisual Artist</a>
+  <ul class="nav-links">
+    <li><a href="index.html#features">功能</a></li>
+    <li><a href="index.html#workflow">工作流</a></li>
+    <li><a href="pricing.html">定价</a></li>
+    <li><a href="portfolio.html">案例</a></li>
+    <li><a href="about.html">关于</a></li>
+    <li><a href="#contact" class="nav-cta">免费试用</a></li>
+  </ul>
+  <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">&#9776;</button>
+</div>
+</nav>
+
+<section class="hero">
+<div class="container">
+  <span class="section-label">定价方案</span>
+  <h1>灵活定价，<span>按需选择</span></h1>
+  <p>从免费体验到企业定制，MediVisual Artist为不同规模的医学研究团队提供合适的方案</p>
+</div>
+</section>
+
+<section>
+<div class="container">
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-name">Starter -- 免费体验</div>
+      <div class="price-amount">Free<span></span></div>
+      <div class="price-desc">适合初次体验AI医学可视化能力的研究者</div>
+      <ul class="price-features">
+        <li>每月5张免费生成</li>
+        <li>基础风格模板(期刊/教学)</li>
+        <li>720p分辨率PNG输出</li>
+        <li>社区支持</li>
+        <li>基础医学实体识别</li>
+      </ul>
+      <a href="mailto:medivisual@mokangmedical.cn" class="price-btn outline">免费开始</a>
+    </div>
+    <div class="price-card popular">
+      <div class="price-name">Professional -- 专业版</div>
+      <div class="price-amount">299<span>/月</span></div>
+      <div class="price-desc">专业研究者的首选方案，满足日常论文配图需求</div>
+      <ul class="price-features">
+        <li>无限生成次数</li>
+        <li>全部风格模板(期刊/教学/路演)</li>
+        <li>600 DPI TIFF/EPS高清输出</li>
+        <li>Nature/Cell/Lancet期刊合规审查</li>
+        <li>每图3轮迭代修改</li>
+        <li>版本控制与历史管理</li>
+        <li>中英双语标注</li>
+        <li>优先技术支持</li>
+      </ul>
+      <a href="mailto:medivisual@mokangmedical.cn" class="price-btn primary">立即订阅</a>
+    </div>
+    <div class="price-card">
+      <div class="price-name">Enterprise -- 企业版</div>
+      <div class="price-amount">定制<span></span></div>
+      <div class="price-desc">面向高校、医院、药企的专属团队方案</div>
+      <ul class="price-features">
+        <li>无限生成 + API批量接入</li>
+        <li>自定义品牌模板与LOGO</li>
+        <li>团队协作与权限管理</li>
+        <li>专属客户成功经理</li>
+        <li>SLA服务等级保障</li>
+        <li>私有化部署可选</li>
+        <li>自定义期刊合规规则</li>
+        <li>培训与咨询服务</li>
+      </ul>
+      <a href="mailto:medivisual@mokangmedical.cn" class="price-btn outline">联系销售</a>
+    </div>
+  </div>
+
+  <!-- Custom Project Pricing -->
+  <div class="custom-section">
+    <div class="custom-grid">
+      <div class="custom-info">
+        <h3>定制插图项目报价</h3>
+        <p>除订阅制外，我们也接受单次定制医学插图项目。根据复杂度、精度要求和交付时间灵活定价。</p>
+        <ul class="custom-features">
+          <li>基础建模 1.0x 基准系数</li>
+          <li>高精度受体结构 1.5x 系数</li>
+          <li>免疫细胞组分 1.2x 系数</li>
+          <li>渲染级效果 1.0x 系数</li>
+          <li>标准交付 7-10个工作日</li>
+          <li>加急交付 3-5天(+50%) / 48小时(+100%)</li>
+        </ul>
+      </div>
+      <div class="pricing-formula">
+        <h4>定价公式</h4>
+        <div class="formula-item"><span class="label">基础单价</span><span class="value">800 元</span></div>
+        <div class="formula-item"><span class="label">复杂度系数(Ci)</span><span class="value">1.0x - 1.5x</span></div>
+        <div class="formula-item"><span class="label">加急费(E)</span><span class="value">0% / 50% / 100%</span></div>
+        <div class="formula-item"><span class="label">最终价格</span><span class="value">(B x Sum(Ci)) x (1 + E)</span></div>
+        <div class="formula-item"><span class="label">付款方式</span><span class="value">40% 预付 + 60% 交付</span></div>
+        <div class="formula-item"><span class="label">输出格式</span><span class="value">300/600 DPI TIFF/EPS</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <div style="text-align:center;margin-bottom:48px">
+      <span class="section-label">常见问题</span>
+      <h2 class="section-title">关于定价的常见疑问</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">免费版有什么限制?</div>
+        <div class="faq-a">免费版每月可生成5张医学插图，支持基础风格模板，输出720p PNG格式。适合初步体验产品能力。</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">可以随时升级或降级方案吗?</div>
+        <div class="faq-a">可以。您可以在任何时候调整订阅方案，升级立即生效，降级在当前计费周期结束后生效。</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">企业版私有化部署如何收费?</div>
+        <div class="faq-a">私有化部署根据部署规模、模型资源、运维支持等因素定制报价。请联系销售团队获取详细方案。</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">输出的插图版权归谁?</div>
+        <div class="faq-a">所有通过MediVisual Artist生成的插图版权归用户所有。我们不保留任何商业使用权。</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">支持哪些支付方式?</div>
+        <div class="faq-a">支持支付宝、微信支付、银行转账。企业版支持对公转账和发票开具。</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">有退款政策吗?</div>
+        <div class="faq-a">订阅首7天内如不满意可全额退款。定制项目在确认需求前可免费取消。</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section id="contact">
+<div class="container">
+  <div class="cta">
+    <h2>还有疑问?欢迎联系我们</h2>
+    <p>我们的团队将为您推荐最合适的方案</p>
+    <div class="cta-buttons">
+      <a href="mailto:medivisual@mokangmedical.cn" class="btn-primary">发送邮件 --</a>
+      <a href="features.html" class="btn-outline">查看功能详情</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">MediVisual Artist</div>
+      <p>AI驱动的医学可视化创作平台。深度医学语义理解，2小时交付出版级插图，期刊合规保障。</p>
+    </div>
+    <div class="footer-col">
+      <h4>产品</h4>
+      <a href="features.html">功能详情</a>
+      <a href="pricing.html">定价方案</a>
+      <a href="portfolio.html">案例展示</a>
+    </div>
+    <div class="footer-col">
+      <h4>关于</h4>
+      <a href="about.html">团队介绍</a>
+      <a href="about.html#vision">愿景使命</a>
+    </div>
+    <div class="footer-col">
+      <h4>支持</h4>
+      <a href="mailto:medivisual@mokangmedical.cn">联系我们</a>
+      <a href="#">帮助中心</a>
+      <a href="#">隐私政策</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>2026 MediVisual Artist. A MoKangMedical Project.</span>
+    <span>medivisual@mokangmedical.cn</span>
+  </div>
+</div>
+</footer>
+
+<style>@media(max-width:768px){.nav-links{position:fixed;top:64px;left:0;right:0;background:rgba(10,15,26,.98);backdrop-filter:blur(20px);flex-direction:column;padding:24px;gap:16px;border-bottom:1px solid var(--border);display:none}.nav-links.show{display:flex}}</style>
+</body>
+</html>

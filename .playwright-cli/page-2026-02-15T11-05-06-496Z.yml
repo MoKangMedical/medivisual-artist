@@ -1,0 +1,714 @@
+- generic [ref=e2]:
+  - region "Notifications alt+T"
+  - navigation [ref=e3]:
+    - generic [ref=e4]:
+      - link "MediVisual Artist MediVisual" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "MediVisual Artist" [ref=e6]
+        - generic [ref=e7]: MediVisual
+      - generic [ref=e8]:
+        - link "首页" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "功能介绍" [ref=e10] [cursor=pointer]:
+          - /url: /templates
+        - link "模板库" [ref=e11] [cursor=pointer]:
+          - /url: /templates
+        - link "使用指南" [ref=e12] [cursor=pointer]:
+          - /url: /guidelines
+        - link "期刊规范" [ref=e13] [cursor=pointer]:
+          - /url: /journal-styles
+        - link "定价" [ref=e14] [cursor=pointer]:
+          - /url: /pricing
+        - link "专业服务" [ref=e15] [cursor=pointer]:
+          - /url: /contact
+        - link "社区" [ref=e16] [cursor=pointer]:
+          - /url: /community
+        - link "积分" [ref=e17] [cursor=pointer]:
+          - /url: /points
+        - link "排行榜" [ref=e18] [cursor=pointer]:
+          - /url: /leaderboard
+        - link "兑换" [ref=e19] [cursor=pointer]:
+          - /url: /redeem
+      - generic [ref=e20]:
+        - button "English" [ref=e21] [cursor=pointer]:
+          - img [ref=e22]
+          - generic [ref=e25]: English
+        - link "登录" [ref=e26] [cursor=pointer]:
+          - /url: https://manus.im/app-auth?appId=aMX843KK52abJ5HevtcEe2&redirectUri=https%3A%2F%2Fmedivisual.org%2Fapi%2Foauth%2Fcallback&state=aHR0cHM6Ly9tZWRpdmlzdWFsLm9yZy9hcGkvb2F1dGgvY2FsbGJhY2s%3D&type=signIn
+          - button "登录" [ref=e27]
+  - generic [ref=e28]:
+    - generic:
+      - img
+      - img
+      - img
+      - img
+      - img
+      - img
+      - img
+      - img
+      - img
+      - img
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - img [ref=e37]
+        - generic [ref=e49]: AI驱动的科研绘图助手
+        - img [ref=e50]
+      - heading "医学视觉艺术家" [level=1] [ref=e52]
+      - paragraph [ref=e53]: 将科研摘要转化为可发表级别的插图提示词
+      - paragraph [ref=e54]: AI驱动的工具，从您的研究中提取生物学元素，生成符合Nature/Cell审美标准的BioRender风格提示词，包含详细标签、箭头和多面板布局。
+      - generic [ref=e55]:
+        - button "demo.button.label" [ref=e56] [cursor=pointer]:
+          - img
+          - text: demo.button.label
+        - link "提示词模板" [ref=e57] [cursor=pointer]:
+          - /url: /templates
+          - button "提示词模板" [ref=e58]
+    - generic [ref=e61]:
+      - generic [ref=e62]:
+        - img [ref=e65]
+        - generic [ref=e67]: 50+
+        - generic [ref=e68]: 支持顶级期刊规格
+        - generic [ref=e69]: Nature、Science、Cell等
+      - generic [ref=e70]:
+        - img [ref=e73]
+        - generic [ref=e75]: 80%
+        - generic [ref=e76]: 节省绘图时间
+        - generic [ref=e77]: 2天工作量缩短至2小时
+      - generic [ref=e78]:
+        - img [ref=e81]
+        - generic [ref=e86]: 10K+
+        - generic [ref=e87]: 已服务科研工作者
+        - generic [ref=e88]: 来自全球顶级研究机构
+      - generic [ref=e89]:
+        - img [ref=e92]
+        - generic [ref=e94]: "8"
+        - generic [ref=e95]: 识别核心生物学元素
+        - generic [ref=e96]: 信号通路、蛋白质、细胞等
+    - generic [ref=e98]:
+      - generic [ref=e99]:
+        - paragraph [ref=e100]: 符合顶级期刊标准
+        - heading "为以下期刊优化插图规格" [level=2] [ref=e101]
+      - generic [ref=e102]:
+        - generic [ref=e103]: Nature
+        - generic [ref=e104]: Science
+        - generic [ref=e105]: Cell
+        - generic [ref=e106]:
+          - text: NEJM
+          - generic [ref=e107]: New England Journal of Medicine
+        - generic [ref=e108]: JAMA
+        - generic [ref=e109]: Lancet
+        - generic [ref=e110]: BMJ
+      - paragraph [ref=e111]: 一键复制符合各期刊要求的插图规格参数
+    - generic [ref=e113]:
+      - generic [ref=e114]:
+        - generic [ref=e115]:
+          - img [ref=e116]
+          - heading "顶刊级别插图展示" [level=2] [ref=e119]
+        - paragraph [ref=e120]: 我们的AI生成的提示词可以创建符合Nature、Science、Cell、NEJM、JAMA、Lancet等顶级期刊标准的科研插图
+      - generic [ref=e121]:
+        - generic [ref=e122]:
+          - img "人类躯干发育建模" [ref=e124]
+          - generic [ref=e125]:
+            - generic [ref=e126]:
+              - generic [ref=e127]: Nature Cell Biology
+              - generic [ref=e128]: 发育生物学
+            - heading "人类躯干发育建模" [level=3] [ref=e129]
+        - generic [ref=e130]:
+          - img "病毒-宿主相互作用机制" [ref=e132]
+          - generic [ref=e133]:
+            - generic [ref=e134]:
+              - generic [ref=e135]: Cell
+              - generic [ref=e136]: 病毒学
+            - heading "病毒-宿主相互作用机制" [level=3] [ref=e137]
+        - generic [ref=e138]:
+          - img "MAPK信号通路" [ref=e140]
+          - generic [ref=e141]:
+            - generic [ref=e142]:
+              - generic [ref=e143]: Nature Reviews
+              - generic [ref=e144]: 信号转导
+            - heading "MAPK信号通路" [level=3] [ref=e145]
+        - generic [ref=e146]:
+          - img "NF-κB信号通路" [ref=e148]
+          - generic [ref=e149]:
+            - generic [ref=e150]:
+              - generic [ref=e151]: Cell Signaling
+              - generic [ref=e152]: 免疫调控
+            - heading "NF-κB信号通路" [level=3] [ref=e153]
+        - generic [ref=e154]:
+          - img "疾病发病机制图解" [ref=e156]
+          - generic [ref=e157]:
+            - generic [ref=e158]:
+              - generic [ref=e159]: NEJM
+              - generic [ref=e160]: 临床医学
+            - heading "疾病发病机制图解" [level=3] [ref=e161]
+        - generic [ref=e162]:
+          - img "JAK/STAT信号通路" [ref=e164]
+          - generic [ref=e165]:
+            - generic [ref=e166]:
+              - generic [ref=e167]: Signal Transduction
+              - generic [ref=e168]: 分子生物学
+            - heading "JAK/STAT信号通路" [level=3] [ref=e169]
+      - link "查看更多模板" [ref=e171] [cursor=pointer]:
+        - /url: /templates
+        - button "查看更多模板" [ref=e172]:
+          - text: 查看更多模板
+          - img
+    - generic [ref=e174]:
+      - generic [ref=e175]:
+        - heading "核心功能" [level=2] [ref=e176]
+        - paragraph [ref=e177]: 从摘要到插图提示词的完整工作流，助您快速产出符合顶刊标准的医学插图
+      - generic [ref=e178]:
+        - generic [ref=e179]:
+          - generic [ref=e180]:
+            - img [ref=e182]
+            - generic [ref=e184]: 智能元素提取
+          - generic [ref=e186]: AI从摘要中识别8个核心生物学元素
+        - generic [ref=e187]:
+          - generic [ref=e188]:
+            - img [ref=e190]
+            - generic [ref=e193]: 专业提示词
+          - generic [ref=e195]: 生成带标签和布局的BioRender风格提示词
+        - generic [ref=e196]:
+          - generic [ref=e197]:
+            - img [ref=e199]
+            - generic [ref=e204]: 现成模板
+          - generic [ref=e206]: 常见医学场景的预置模板
+        - generic [ref=e207]:
+          - generic [ref=e208]:
+            - img [ref=e210]
+            - generic [ref=e214]: 批量处理
+          - generic [ref=e216]: 批量处理多篇摘要并导出结果
+        - generic [ref=e217]:
+          - generic [ref=e218]:
+            - img [ref=e220]
+            - generic [ref=e225]: 团队协作
+          - generic [ref=e227]: 与同事分享提示词并获取反馈
+        - generic [ref=e228]:
+          - generic [ref=e229]:
+            - img [ref=e231]
+            - generic [ref=e234]: 双语支持
+          - generic [ref=e236]: 完整的中英文界面支持
+    - generic [ref=e238]:
+      - heading "三步工作流" [level=2] [ref=e240]
+      - generic [ref=e241]:
+        - generic [ref=e242]:
+          - generic [ref=e243]: "1"
+          - heading "逻辑建模" [level=3] [ref=e244]
+          - paragraph [ref=e245]: AI分析摘要，提取8个核心生物学元素
+        - generic [ref=e246]:
+          - generic [ref=e247]: "2"
+          - heading "提示词生成" [level=3] [ref=e248]
+          - paragraph [ref=e249]: 生成完整的一键复制提示词，可直接用于Nano Banana或ChatGPT
+        - generic [ref=e250]:
+          - generic [ref=e251]: "3"
+          - heading "视觉执行" [level=3] [ref=e252]
+          - paragraph [ref=e253]: 复制到Nano Banana 2，30秒生成机理图初稿
+    - generic [ref=e256]:
+      - img [ref=e258]
+      - heading "一键复制完整提示词" [level=2] [ref=e262]
+      - paragraph [ref=e263]: 生成的提示词是完整的、可直接复制到Nano Banana 2或ChatGPT中使用的格式，无需分段复制
+      - generic [ref=e264]:
+        - generic [ref=e265]:
+          - img [ref=e266]
+          - generic [ref=e268]: Nano Banana 2
+        - generic [ref=e269]:
+          - img [ref=e270]
+          - generic [ref=e272]: ChatGPT / GPT-4
+        - generic [ref=e273]:
+          - img [ref=e274]
+          - generic [ref=e286]: Midjourney
+    - generic [ref=e288]:
+      - generic [ref=e289]:
+        - generic [ref=e290]:
+          - img [ref=e291]
+          - heading "Trusted by Researchers Worldwide" [level=2] [ref=e294]
+        - paragraph [ref=e295]: Researchers from leading medical and research institutions worldwide choose MediVisual Artist
+      - generic [ref=e296]:
+        - generic [ref=e297]:
+          - img [ref=e298]
+          - heading "User Testimonials & Success Stories - From Leading Global Medical Institutions" [level=3] [ref=e301]
+        - generic [ref=e302]:
+          - generic [ref=e303]:
+            - generic [ref=e304]:
+              - generic [ref=e305]: 👨‍⚕️
+              - generic [ref=e306]:
+                - heading "Dr. Li" [level=3] [ref=e307]
+                - paragraph [ref=e308]: Fudan University Hospital
+                - generic [ref=e309]:
+                  - img [ref=e310]
+                  - img [ref=e312]
+                  - img [ref=e314]
+                  - img [ref=e316]
+                  - img [ref=e318]
+            - paragraph [ref=e320]: "\"After using MediVisual Artist, my paper illustration time reduced from 2 weeks to 2 days. The generated images meet Nature publication standards.\""
+          - generic [ref=e321]:
+            - generic [ref=e322]:
+              - generic [ref=e323]: 👩‍🏫
+              - generic [ref=e324]:
+                - heading "Prof. Wang" [level=3] [ref=e325]
+                - paragraph [ref=e326]: Tsinghua University School of Medicine
+                - generic [ref=e327]:
+                  - img [ref=e328]
+                  - img [ref=e330]
+                  - img [ref=e332]
+                  - img [ref=e334]
+                  - img [ref=e336]
+            - paragraph [ref=e338]: "\"This tool perfectly understands professional medical illustration requirements. My MAPK pathway diagram generated with it was accepted by Cell.\""
+          - generic [ref=e339]:
+            - generic [ref=e340]:
+              - generic [ref=e341]: 👨‍🔬
+              - generic [ref=e342]:
+                - heading "Dr. Chen" [level=3] [ref=e343]
+                - paragraph [ref=e344]: Peking University Medical School
+                - generic [ref=e345]:
+                  - img [ref=e346]
+                  - img [ref=e348]
+                  - img [ref=e350]
+                  - img [ref=e352]
+                  - img [ref=e354]
+            - paragraph [ref=e356]: "\"The AI-generated prompts are of excellent quality, saving me significant manual adjustment time. Highly recommend to all research colleagues.\""
+          - generic [ref=e357]:
+            - generic [ref=e358]:
+              - generic [ref=e359]: 👨‍🎓
+              - generic [ref=e360]:
+                - heading "Liu (Medical Student)" [level=3] [ref=e361]
+                - paragraph [ref=e362]: Peking Union Medical College
+                - generic [ref=e363]:
+                  - img [ref=e364]
+                  - img [ref=e366]
+                  - img [ref=e368]
+                  - img [ref=e370]
+                  - img [ref=e372]
+            - paragraph [ref=e374]: "\"As a student, this tool helped me quickly complete course paper illustrations. 100x faster than traditional methods!\""
+        - generic [ref=e375]:
+          - generic [ref=e376]:
+            - generic [ref=e377]:
+              - generic [ref=e378]: 👩‍⚕️
+              - generic [ref=e379]:
+                - heading "Dr. Maria Santos" [level=3] [ref=e380]
+                - paragraph [ref=e381]: University of the Philippines
+                - generic [ref=e382]:
+                  - img [ref=e383]
+                  - img [ref=e385]
+                  - img [ref=e387]
+                  - img [ref=e389]
+                  - img [ref=e391]
+            - paragraph [ref=e393]: "\"This tool has become essential in our research workflow. The quality of AI-generated illustrations is world-class.\""
+          - generic [ref=e394]:
+            - generic [ref=e395]:
+              - generic [ref=e396]: 👨‍⚕️
+              - generic [ref=e397]:
+                - heading "李医生" [level=3] [ref=e398]
+                - paragraph [ref=e399]: 复旦大学附属医院
+                - generic [ref=e400]:
+                  - img [ref=e401]
+                  - img [ref=e403]
+                  - img [ref=e405]
+                  - img [ref=e407]
+                  - img [ref=e409]
+            - paragraph [ref=e411]: "\"After using MediVisual Artist, my paper illustration creation time was reduced from 2 weeks to 2 days. The generated images fully meet Nature publication standards.\""
+          - generic [ref=e412]:
+            - generic [ref=e413]:
+              - generic [ref=e414]: 👨‍🏫
+              - generic [ref=e415]:
+                - heading "Dr. Rajesh Kumar" [level=3] [ref=e416]
+                - paragraph [ref=e417]: University of Malaya
+                - generic [ref=e418]:
+                  - img [ref=e419]
+                  - img [ref=e421]
+                  - img [ref=e423]
+                  - img [ref=e425]
+                  - img [ref=e427]
+            - paragraph [ref=e429]: "\"MediVisual Artist has transformed our approach to scientific illustration. The bilingual support is particularly valuable for our international collaborations.\""
+          - generic [ref=e430]:
+            - generic [ref=e431]:
+              - generic [ref=e432]: 👨‍🏫
+              - generic [ref=e433]:
+                - heading "Dr. François Dubois" [level=3] [ref=e434]
+                - paragraph [ref=e435]: Sorbonne University
+                - generic [ref=e436]:
+                  - img [ref=e437]
+                  - img [ref=e439]
+                  - img [ref=e441]
+                  - img [ref=e443]
+                  - img [ref=e445]
+            - paragraph [ref=e447]: "\"MediVisual Artist is a game-changer for medical research. The quality of generated prompts is publication-ready.\""
+          - generic [ref=e448]:
+            - generic [ref=e449]:
+              - generic [ref=e450]: 👩‍🏫
+              - generic [ref=e451]:
+                - heading "王教授" [level=3] [ref=e452]
+                - paragraph [ref=e453]: 清华大学医学院
+                - generic [ref=e454]:
+                  - img [ref=e455]
+                  - img [ref=e457]
+                  - img [ref=e459]
+                  - img [ref=e461]
+                  - img [ref=e463]
+            - paragraph [ref=e465]: "\"This tool perfectly understands the professional requirements of medical illustrations. The MAPK pathway diagram I generated with it was accepted by Cell journal.\""
+          - generic [ref=e466]:
+            - generic [ref=e467]:
+              - generic [ref=e468]: 👩‍🔬
+              - generic [ref=e469]:
+                - heading "Dr. Jennifer Liu" [level=3] [ref=e470]
+                - paragraph [ref=e471]: University of Sydney
+                - generic [ref=e472]:
+                  - img [ref=e473]
+                  - img [ref=e475]
+                  - img [ref=e477]
+                  - img [ref=e479]
+                  - img [ref=e481]
+            - paragraph [ref=e483]: "\"The AI-powered prompt generation is incredibly accurate for immunology research. Highly recommend for all biomedical researchers.\""
+          - generic [ref=e484]:
+            - generic [ref=e485]:
+              - generic [ref=e486]: 👨‍⚕️
+              - generic [ref=e487]:
+                - heading "Dr. Min-jun Park" [level=3] [ref=e488]
+                - paragraph [ref=e489]: 서울대학교 의과대학
+                - generic [ref=e490]:
+                  - img [ref=e491]
+                  - img [ref=e493]
+                  - img [ref=e495]
+                  - img [ref=e497]
+                  - img [ref=e499]
+            - paragraph [ref=e501]: "\"MediVisual Artist has tripled our research team's paper publication efficiency. Highly recommended.\""
+          - generic [ref=e502]:
+            - generic [ref=e503]:
+              - generic [ref=e504]: 👨‍⚕️
+              - generic [ref=e505]:
+                - heading "Dr. James Wilson" [level=3] [ref=e506]
+                - paragraph [ref=e507]: Harvard Medical School
+                - generic [ref=e508]:
+                  - img [ref=e509]
+                  - img [ref=e511]
+                  - img [ref=e513]
+                  - img [ref=e515]
+                  - img [ref=e517]
+            - paragraph [ref=e519]: "\"MediVisual Artist significantly accelerated our research publication pipeline. The quality rivals professional scientific illustrators.\""
+          - generic [ref=e520]:
+            - generic [ref=e521]:
+              - generic [ref=e522]: 👨‍🏫
+              - generic [ref=e523]:
+                - heading "Dr. Christopher Brown" [level=3] [ref=e524]
+                - paragraph [ref=e525]: University of Oxford
+                - generic [ref=e526]:
+                  - img [ref=e527]
+                  - img [ref=e529]
+                  - img [ref=e531]
+                  - img [ref=e533]
+                  - img [ref=e535]
+            - paragraph [ref=e537]: "\"Exceptional tool for medical research. Our department has adopted it as the standard for creating publication-quality illustrations.\""
+          - generic [ref=e538]:
+            - generic [ref=e539]:
+              - generic [ref=e540]: 👨‍🏫
+              - generic [ref=e541]:
+                - heading "Dr. Kenji Suzuki" [level=3] [ref=e542]
+                - paragraph [ref=e543]: 大阪大学医学部
+                - generic [ref=e544]:
+                  - img [ref=e545]
+                  - img [ref=e547]
+                  - img [ref=e549]
+                  - img [ref=e551]
+                  - img [ref=e553]
+            - paragraph [ref=e555]: "\"MediVisual Artist's multilingual support and extensive templates are ideal for international collaborative research.\""
+          - generic [ref=e556]:
+            - generic [ref=e557]:
+              - generic [ref=e558]: 👨‍⚕️
+              - generic [ref=e559]:
+                - heading "Dr. Lars Bergström" [level=3] [ref=e560]
+                - paragraph [ref=e561]: Karolinska Institute
+                - generic [ref=e562]:
+                  - img [ref=e563]
+                  - img [ref=e565]
+                  - img [ref=e567]
+                  - img [ref=e569]
+                  - img [ref=e571]
+            - paragraph [ref=e573]: "\"The speed and accuracy of illustration generation have revolutionized our research publication process.\""
+          - generic [ref=e574]:
+            - generic [ref=e575]:
+              - generic [ref=e576]: 👩‍⚕️
+              - generic [ref=e577]:
+                - heading "张主任" [level=3] [ref=e578]
+                - paragraph [ref=e579]: 北京协和医院
+                - generic [ref=e580]:
+                  - img [ref=e581]
+                  - img [ref=e583]
+                  - img [ref=e585]
+                  - img [ref=e587]
+                  - img [ref=e589]
+            - paragraph [ref=e591]: "\"After using this tool, our research team's publication efficiency increased 3-fold. This is an essential tool for medical research.\""
+          - generic [ref=e592]:
+            - generic [ref=e593]:
+              - generic [ref=e594]: 👨‍🏫
+              - generic [ref=e595]:
+                - heading "Dr. Sung-ho Lee" [level=3] [ref=e596]
+                - paragraph [ref=e597]: 고려대학교 의과대학
+                - generic [ref=e598]:
+                  - img [ref=e599]
+                  - img [ref=e601]
+                  - img [ref=e603]
+                  - img [ref=e605]
+                  - img [ref=e607]
+            - paragraph [ref=e609]: "\"This tool has become essential for medical research. It excels in both productivity and quality.\""
+          - generic [ref=e610]:
+            - generic [ref=e611]:
+              - generic [ref=e612]: 👨‍🔬
+              - generic [ref=e613]:
+                - heading "李院士" [level=3] [ref=e614]
+                - paragraph [ref=e615]: 中国医学科学院
+                - generic [ref=e616]:
+                  - img [ref=e617]
+                  - img [ref=e619]
+                  - img [ref=e621]
+                  - img [ref=e623]
+                  - img [ref=e625]
+            - paragraph [ref=e627]: "\"The quality of AI-generated illustrations is impressive and fully meets the requirements of international top-tier journals.\""
+          - generic [ref=e628]:
+            - generic [ref=e629]:
+              - generic [ref=e630]: 👨‍⚕️
+              - generic [ref=e631]:
+                - heading "Dr. Mark Thompson" [level=3] [ref=e632]
+                - paragraph [ref=e633]: Monash University
+                - generic [ref=e634]:
+                  - img [ref=e635]
+                  - img [ref=e637]
+                  - img [ref=e639]
+                  - img [ref=e641]
+                  - img [ref=e643]
+            - paragraph [ref=e645]: "\"This tool has become essential in our molecular biology lab. The speed and quality are unmatched in the industry.\""
+          - generic [ref=e646]:
+            - generic [ref=e647]:
+              - generic [ref=e648]: 👩‍🔬
+              - generic [ref=e649]:
+                - heading "Dr. Yuki Yamamoto" [level=3] [ref=e650]
+                - paragraph [ref=e651]: 京都大学医学部
+                - generic [ref=e652]:
+                  - img [ref=e653]
+                  - img [ref=e655]
+                  - img [ref=e657]
+                  - img [ref=e659]
+                  - img [ref=e661]
+            - paragraph [ref=e663]: "\"This tool shortened our paper creation process by 2 weeks. Nature-quality figures can be easily created.\""
+          - generic [ref=e664]:
+            - generic [ref=e665]:
+              - generic [ref=e666]: 👩‍🔬
+              - generic [ref=e667]:
+                - heading "Dr. Somchai Pattana" [level=3] [ref=e668]
+                - paragraph [ref=e669]: Chulalongkorn University
+                - generic [ref=e670]:
+                  - img [ref=e671]
+                  - img [ref=e673]
+                  - img [ref=e675]
+                  - img [ref=e677]
+                  - img [ref=e679]
+            - paragraph [ref=e681]: "\"MediVisual Artist helps our research team save significant time. The quality of generated images is outstanding.\""
+          - generic [ref=e682]:
+            - generic [ref=e683]:
+              - generic [ref=e684]: 👨‍⚕️
+              - generic [ref=e685]:
+                - heading "Dr. Robert Anderson" [level=3] [ref=e686]
+                - paragraph [ref=e687]: Mayo Clinic
+                - generic [ref=e688]:
+                  - img [ref=e689]
+                  - img [ref=e691]
+                  - img [ref=e693]
+                  - img [ref=e695]
+                  - img [ref=e697]
+            - paragraph [ref=e699]: "\"The bilingual support and extensive template library make this tool perfect for our international research collaborations.\""
+          - generic [ref=e700]:
+            - generic [ref=e701]:
+              - generic [ref=e702]: 👩‍🔬
+              - generic [ref=e703]:
+                - heading "Dr. Ji-woo Kim" [level=3] [ref=e704]
+                - paragraph [ref=e705]: 연세대학교 의과대학
+                - generic [ref=e706]:
+                  - img [ref=e707]
+                  - img [ref=e709]
+                  - img [ref=e711]
+                  - img [ref=e713]
+                  - img [ref=e715]
+            - paragraph [ref=e717]: "\"The quality of AI-generated medical illustrations is remarkably high. It perfectly meets international journal publication standards.\""
+          - generic [ref=e718]:
+            - generic [ref=e719]:
+              - generic [ref=e720]: 👨‍🔬
+              - generic [ref=e721]:
+                - heading "Dr. Andrew Mitchell" [level=3] [ref=e722]
+                - paragraph [ref=e723]: University of Melbourne
+                - generic [ref=e724]:
+                  - img [ref=e725]
+                  - img [ref=e727]
+                  - img [ref=e729]
+                  - img [ref=e731]
+                  - img [ref=e733]
+            - paragraph [ref=e735]: "\"MediVisual Artist has transformed our research illustration workflow. Our team has published 8 papers in top-tier journals using this tool.\""
+          - generic [ref=e736]:
+            - generic [ref=e737]:
+              - generic [ref=e738]: 👨‍🔬
+              - generic [ref=e739]:
+                - heading "Dr. David Lim" [level=3] [ref=e740]
+                - paragraph [ref=e741]: National University of Singapore
+                - generic [ref=e742]:
+                  - img [ref=e743]
+                  - img [ref=e745]
+                  - img [ref=e747]
+                  - img [ref=e749]
+                  - img [ref=e751]
+            - paragraph [ref=e753]: "\"MediVisual Artist has revolutionized how our research group creates scientific illustrations. The AI understands complex biological concepts exceptionally well.\""
+          - generic [ref=e754]:
+            - generic [ref=e755]:
+              - generic [ref=e756]: 👨‍⚕️
+              - generic [ref=e757]:
+                - heading "陈医生" [level=3] [ref=e758]
+                - paragraph [ref=e759]: 上海交通大学医学院
+                - generic [ref=e760]:
+                  - img [ref=e761]
+                  - img [ref=e763]
+                  - img [ref=e765]
+                  - img [ref=e767]
+                  - img [ref=e769]
+            - paragraph [ref=e771]: "\"MediVisual Artist has a very rich template library that saved me a lot of design time. Highly recommended for all medical researchers.\""
+          - generic [ref=e772]:
+            - generic [ref=e773]:
+              - generic [ref=e774]: 👩‍🔬
+              - generic [ref=e775]:
+                - heading "Dr. Victoria Smith" [level=3] [ref=e776]
+                - paragraph [ref=e777]: University of Cambridge
+                - generic [ref=e778]:
+                  - img [ref=e779]
+                  - img [ref=e781]
+                  - img [ref=e783]
+                  - img [ref=e785]
+                  - img [ref=e787]
+            - paragraph [ref=e789]: "\"MediVisual Artist's AI understands complex biological pathways better than any tool we've used. Highly recommended.\""
+          - generic [ref=e790]:
+            - generic [ref=e791]:
+              - generic [ref=e792]: 👨‍🔬
+              - generic [ref=e793]:
+                - heading "Dr. Michael Rodriguez" [level=3] [ref=e794]
+                - paragraph [ref=e795]: MD Anderson Cancer Center
+                - generic [ref=e796]:
+                  - img [ref=e797]
+                  - img [ref=e799]
+                  - img [ref=e801]
+                  - img [ref=e803]
+                  - img [ref=e805]
+            - paragraph [ref=e807]: "\"The AI-powered prompt generation is incredibly accurate for oncology research. Our team has reduced illustration turnaround time by 80%.\""
+          - generic [ref=e808]:
+            - generic [ref=e809]:
+              - generic [ref=e810]: 👨‍⚕️
+              - generic [ref=e811]:
+                - heading "Dr. Hiroshi Tanaka" [level=3] [ref=e812]
+                - paragraph [ref=e813]: 東京大学医学部
+                - generic [ref=e814]:
+                  - img [ref=e815]
+                  - img [ref=e817]
+                  - img [ref=e819]
+                  - img [ref=e821]
+                  - img [ref=e823]
+            - paragraph [ref=e825]: "\"MediVisual Artist has significantly improved the efficiency of medical research. The quality of generated prompts is exceptionally high.\""
+          - generic [ref=e826]:
+            - generic [ref=e827]:
+              - generic [ref=e828]: 👩‍⚕️
+              - generic [ref=e829]:
+                - heading "Dr. Sarah Chen" [level=3] [ref=e830]
+                - paragraph [ref=e831]: Stanford School of Medicine
+                - generic [ref=e832]:
+                  - img [ref=e833]
+                  - img [ref=e835]
+                  - img [ref=e837]
+                  - img [ref=e839]
+                  - img [ref=e841]
+            - paragraph [ref=e843]: "\"This tool transformed how our lab creates scientific illustrations. We've published 15 papers in top journals using MediVisual-generated figures.\""
+          - generic [ref=e844]:
+            - generic [ref=e845]:
+              - generic [ref=e846]: 👨‍⚕️
+              - generic [ref=e847]:
+                - heading "Dr. Budi Santoso" [level=3] [ref=e848]
+                - paragraph [ref=e849]: Universitas Indonesia
+                - generic [ref=e850]:
+                  - img [ref=e851]
+                  - img [ref=e853]
+                  - img [ref=e855]
+                  - img [ref=e857]
+                  - img [ref=e859]
+            - paragraph [ref=e861]: "\"This tool is a game-changer for our research team. The quality of generated figures fully meets international top-tier journal standards.\""
+          - generic [ref=e862]:
+            - generic [ref=e863]:
+              - generic [ref=e864]: 👩‍🏫
+              - generic [ref=e865]:
+                - heading "Dr. Emily Thompson" [level=3] [ref=e866]
+                - paragraph [ref=e867]: Johns Hopkins University
+                - generic [ref=e868]:
+                  - img [ref=e869]
+                  - img [ref=e871]
+                  - img [ref=e873]
+                  - img [ref=e875]
+                  - img [ref=e877]
+            - paragraph [ref=e879]: "\"MediVisual Artist has become an indispensable tool in our research workflow. The quality and speed are unmatched.\""
+          - generic [ref=e880]:
+            - generic [ref=e881]:
+              - generic [ref=e882]: 👩‍⚕️
+              - generic [ref=e883]:
+                - heading "Dr. Petra Mueller" [level=3] [ref=e884]
+                - paragraph [ref=e885]: Charité University Hospital
+                - generic [ref=e886]:
+                  - img [ref=e887]
+                  - img [ref=e889]
+                  - img [ref=e891]
+                  - img [ref=e893]
+                  - img [ref=e895]
+            - paragraph [ref=e897]: "\"Outstanding AI tool for medical research. Our team's productivity has increased significantly since we started using it.\""
+        - generic [ref=e898]:
+          - generic [ref=e899]:
+            - generic [ref=e900]: 29+
+            - paragraph [ref=e901]: Top Hospitals
+          - generic [ref=e902]:
+            - generic [ref=e903]: "7"
+            - paragraph [ref=e904]: Regions
+          - generic [ref=e905]:
+            - generic [ref=e906]: 50+
+            - paragraph [ref=e907]: Countries
+          - generic [ref=e908]:
+            - generic [ref=e909]: 100K+
+            - paragraph [ref=e910]: Illustrations
+    - generic [ref=e912]:
+      - heading "开始您的科研绘图之旅" [level=2] [ref=e913]
+      - paragraph [ref=e914]: 将原本需要2天的绘图工作缩短至提取-生成-微调的极速链路
+      - link "免费开始" [ref=e915] [cursor=pointer]:
+        - /url: https://manus.im/app-auth?appId=aMX843KK52abJ5HevtcEe2&redirectUri=https%3A%2F%2Fmedivisual.org%2Fapi%2Foauth%2Fcallback&state=aHR0cHM6Ly9tZWRpdmlzdWFsLm9yZy9hcGkvb2F1dGgvY2FsbGJhY2s%3D&type=signIn
+        - button "免费开始" [ref=e916]:
+          - text: 免费开始
+          - img
+    - contentinfo [ref=e917]:
+      - generic [ref=e918]:
+        - generic [ref=e919]:
+          - generic [ref=e920]:
+            - generic [ref=e921]:
+              - img "MediVisual Artist" [ref=e922]
+              - generic [ref=e923]: 医学视觉艺术家
+            - paragraph [ref=e924]: AI驱动的科研绘图助手，助您快速产出符合顶刊标准的医学插图
+          - generic [ref=e925]:
+            - heading "快速链接" [level=3] [ref=e926]
+            - generic [ref=e927]:
+              - link "生成提示词" [ref=e928] [cursor=pointer]:
+                - /url: /generate
+              - link "模板库" [ref=e929] [cursor=pointer]:
+                - /url: /templates
+              - link "使用指南" [ref=e930] [cursor=pointer]:
+                - /url: /guidelines
+              - link "期刊规格" [ref=e931] [cursor=pointer]:
+                - /url: /journal-styles
+              - link "专业服务" [ref=e932] [cursor=pointer]:
+                - /url: /contact
+          - generic [ref=e933]:
+            - heading "联系我们" [level=3] [ref=e934]
+            - generic [ref=e935]:
+              - img [ref=e936]
+              - link "medivisual@mokangmedical.cn" [ref=e939] [cursor=pointer]:
+                - /url: mailto:medivisual@mokangmedical.cn
+            - paragraph [ref=e940]: 欢迎咨询合作、定制需求或技术支持
+        - paragraph [ref=e942]: © 2025 医学视觉艺术家 - 专为科研人员设计
+  - button "联系客服" [ref=e944] [cursor=pointer]:
+    - img
+  - button "扫码" [ref=e946] [cursor=pointer]:
+    - generic [ref=e947]: 扫码

@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.3">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="zh-CN"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;医学插图 OPC 项目报价计算器&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--medical-blue: #0056b3;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--pastel-gray: #f8f9fa;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--border-color: #dee2e6;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--pastel-gray);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #333;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 20px rgba(0,0,0,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--medical-blue);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 2px solid var(--medical-blue);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>label {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.input-group {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>input[type="number"], select {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.complexity-hint {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #666;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-left: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 120px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.result-box {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #e7f3ff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.result-line {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.total-price {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #d9534f;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.footer-note {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #999;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.5;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;医学插图报价计算器&lt;/h1&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 基础单价 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;基础单价 (B)：&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="number" id="basePrice" value="800" oninput="calculate()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 复杂度项 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;元素数量与复杂度 (C)：&lt;/label&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="input-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;基础场景建模：&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="number" id="qty_basic" value="1" min="0" oninput="calculate()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="complexity-hint"&gt;系数: 1.0&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="input-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;高精受体建模：&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="number" id="qty_high" value="0" min="0" oninput="calculate()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="complexity-hint"&gt;系数: 1.5&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="input-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;免疫细胞组件：&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="number" id="qty_immune" value="0" min="0" oninput="calculate()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="complexity-hint"&gt;系数: 1.2&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="input-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;渲染与后期：&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="number" id="qty_render" value="1" min="0" oninput="calculate()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="complexity-hint"&gt;系数: 1.0&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 加急费 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;交付周期 (E)：&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;select id="urgentFee" onchange="calculate()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="0"&gt;正常排期 (7-10个工作日) - 0%&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="0.5"&gt;加急处理 (3-5个工作日) - 50%&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option value="1"&gt;特急处理 (48小时内) - 100%&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 计算结果 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="result-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="result-line"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;项目总计：&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="total-price" id="totalPrice"&gt;¥ 0&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="result-line"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;首付款 (40%)：&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span id="deposit"&gt;¥ 0&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="result-line"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;尾款 (60%)：&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span id="balance"&gt;¥ 0&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="footer-note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>* 计算基于公式：Price = (B × ΣCi) × (1 + E) [1]&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>* 复杂度系数参考：基础/后期(1.0)，细胞(1.2)，高精受体(1.5) [2]&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>* 交付包含：300/600 DPI TIFF/EPS 格式 [2]</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function calculate() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const B = parseFloat(document.getElementById('basePrice').value) || 0;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// 获取各系数数量</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const q_basic = parseInt(document.getElementById('qty_basic').value) || 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const q_high = parseInt(document.getElementById('qty_high').value) || 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const q_immune = parseInt(document.getElementById('qty_immune').value) || 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const q_render = parseInt(document.getElementById('qty_render').value) || 0;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// 加急系数</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const E = parseFloat(document.getElementById('urgentFee').value);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// 计算总复杂度 ΣCi</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const totalCi = (q_basic * 1.0) + (q_high * 1.5) + (q_immune * 1.2) + (q_render * 1.0);</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// 总价计算</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const finalPrice = (B * totalCi) * (1 + E);</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// 分段付款计算 [2, 3]</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const depositPrice = finalPrice * 0.4;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const balancePrice = finalPrice * 0.6;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// 更新界面</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('totalPrice').innerText = "¥ " + finalPrice.toLocaleString();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('deposit').innerText = "¥ " + depositPrice.toLocaleString();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('balance').innerText = "¥ " + balancePrice.toLocaleString();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// 页面加载时初始化计算一次</p>
+<p class="p1"><span class="Apple-converted-space">    </span>window.onload = calculate;</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>

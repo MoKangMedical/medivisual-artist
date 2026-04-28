@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>联系我们 - MediVisual Artist</title>
+<meta name="description" content="联系 MediVisual Artist 团队，商务合作、技术支持、企业定制等均可联系我们。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0f1a'/><circle cx='50' cy='50' r='30' fill='none' stroke='%2300d4ff' stroke-width='4'/><circle cx='50' cy='35' r='6' fill='%2300d4ff'/><circle cx='38' cy='55' r='6' fill='%237c3aed'/><circle cx='62' cy='55' r='6' fill='%23ff6b35'/></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* ---- Contact Layout ---- */
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
+.contact-form-card{background:var(--bg2);border:1px solid var(--border);border-radius:24px;padding:48px;position:relative;overflow:hidden}
+.contact-form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient-primary)}
+.contact-form-card h3{font-family:'Space Grotesk','Noto Sans SC',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:8px}
+.contact-form-card>p{color:var(--text2);font-size:.95rem;margin-bottom:32px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.submit-btn{width:100%;padding:16px;background:var(--primary);color:var(--bg);border:none;border-radius:12px;font-weight:700;font-size:1rem;cursor:pointer;transition:.3s;display:flex;align-items:center;justify-content:center;gap:10px;font-family:inherit}
+.submit-btn:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,212,255,.3)}
+.form-note{color:var(--text3);font-size:.8rem;margin-top:16px;text-align:center}
+
+/* ---- Sidebar ---- */
+.contact-sidebar{display:flex;flex-direction:column;gap:24px}
+.contact-card{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:28px;transition:.3s}
+.contact-card:hover{border-color:var(--primary);box-shadow:var(--glow)}
+.contact-card .card-icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(0,212,255,.1);border-radius:14px;margin-bottom:16px}
+.contact-card h4{font-size:1.05rem;font-weight:600;margin-bottom:8px}
+.contact-card p{color:var(--text2);font-size:.9rem;line-height:1.7;margin-bottom:12px}
+.contact-card .card-link{display:inline-flex;align-items:center;gap:6px;font-size:.9rem;font-weight:500;color:var(--primary);transition:.3s}
+.contact-card .card-link:hover{color:#fff;gap:10px}
+.contact-card .card-link svg{width:16px;height:16px}
+
+/* ---- FAQ ---- */
+.faq-section{margin-top:0}
+.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:28px;transition:.3s}
+.faq-item:hover{border-color:var(--primary);transform:translateY(-4px);box-shadow:var(--glow)}
+.faq-item .faq-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:rgba(124,58,237,.1);border-radius:12px;margin-bottom:16px}
+.faq-item h4{font-size:1.05rem;font-weight:600;margin-bottom:8px}
+.faq-item p{color:var(--text2);font-size:.9rem;line-height:1.7}
+.faq-item .faq-link{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:.85rem;font-weight:500;color:var(--primary)}
+.faq-item .faq-link svg{width:14px;height:14px;transition:transform .3s}
+.faq-item:hover .faq-link svg{transform:translateX(4px)}
+
+@media(max-width:1024px){
+  .contact-grid{grid-template-columns:1fr}
+  .contact-sidebar{display:grid;grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:768px){
+  .contact-sidebar{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr}
+  .contact-form-card{padding:28px}
+}
+</style>
+</head>
+<body style="padding-top:56px!important">
+
+<!-- OPC Top Nav -->
+<nav class="opc-nav" id="opc-nav">
+  <a href="https://mokangmedical.github.io/opc-homepage/" class="opc-brand">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="url(#ng1)" stroke-width="2.5"/><path d="M10 16h12M16 10v12" stroke="url(#ng1)" stroke-width="2.5" stroke-linecap="round"/><defs><linearGradient id="ng1" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#818cf8"/><stop offset="1" stop-color="#c084fc"/></linearGradient></defs></svg>
+    <span>MediVisual Artist</span>
+  </a>
+  <div class="opc-links">
+    <a href="https://mokangmedical.github.io/opc-homepage/">生态首页</a>
+    <a href="https://github.com/MoKangMedical/medivisual-artist" target="_blank">GitHub</a>
+    <a href="https://mokangmedical.github.io/opc-alliance/" class="opc-hub">OPC Hub</a>
+  </div>
+</nav>
+
+<!-- Main Nav -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="30" stroke="url(#navlg)" stroke-width="4"/><circle cx="50" cy="35" r="6" fill="#00d4ff"/><circle cx="38" cy="55" r="6" fill="#7c3aed"/><circle cx="62" cy="55" r="6" fill="#ff6b35"/><line x1="50" y1="41" x2="38" y2="49" stroke="#00d4ff" stroke-width="2" opacity=".5"/><line x1="50" y1="41" x2="62" y2="49" stroke="#00d4ff" stroke-width="2" opacity=".5"/><line x1="38" y1="55" x2="62" y2="55" stroke="#00d4ff" stroke-width="2" opacity=".5"/><defs><linearGradient id="navlg" x1="20" y1="20" x2="80" y2="80"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs></svg>
+      MediVisual Artist
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="features.html">功能</a></li>
+      <li><a href="demo.html">Demo</a></li>
+      <li><a href="pricing.html">定价</a></li>
+      <li><a href="about.html">关于</a></li>
+      <li><a href="portfolio.html">案例</a></li>
+      <li><a href="contact.html" class="active">联系</a></li>
+      <li><a href="demo.html" class="nav-cta">免费试用</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+<div class="container">
+  <div class="hero-content">
+    <span class="section-label">Contact Us</span>
+    <h1>联系<span>我们</span></h1>
+    <p>无论是商务合作、技术支持还是产品反馈，我们都期待听到你的声音。</p>
+  </div>
+</div>
+</section>
+
+<!-- Contact Form + Sidebar -->
+<section style="padding-top:0">
+<div class="container">
+  <div class="contact-grid">
+
+    <!-- Form -->
+    <div class="contact-form-card reveal">
+      <h3>发送消息</h3>
+      <p>填写下方表单，我们将在1个工作日内回复你。</p>
+      <form id="contactForm" onsubmit="return false">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">姓名</label>
+            <input type="text" id="name" class="form-input" placeholder="你的姓名">
+          </div>
+          <div class="form-group">
+            <label for="email">邮箱</label>
+            <input type="email" id="email" class="form-input" placeholder="your@email.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">主题</label>
+          <select id="subject" class="form-select">
+            <option value="" disabled selected>请选择咨询类型</option>
+            <option value="business">商务合作</option>
+            <option value="support">技术支持</option>
+            <option value="enterprise">企业定制</option>
+            <option value="media">媒体采访</option>
+            <option value="other">其他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">留言</label>
+          <textarea id="message" class="form-textarea" placeholder="请详细描述你的需求或问题..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          发送消息
+        </button>
+        <p class="form-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:4px"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          你的信息将被严格保密，仅用于沟通回复
+        </p>
+      </form>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="contact-sidebar">
+      <div class="contact-card reveal">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h4>电子邮件</h4>
+        <p>发送邮件至我们的官方邮箱，通常在1个工作日内回复。</p>
+        <a href="mailto:medivisual@mokangmedical.cn" class="card-link">
+          medivisual@mokangmedical.cn
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <div class="contact-card reveal">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </div>
+        <h4>GitHub</h4>
+        <p>在GitHub上提交Issue，参与开源社区讨论，或浏览项目文档。</p>
+        <a href="https://github.com/MoKangMedical/medivisual-artist" target="_blank" class="card-link">
+          MoKangMedical/medivisual-artist
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <div class="contact-card reveal">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h4>工作时间</h4>
+        <p>我们的团队在以下时间段提供实时支持服务。</p>
+        <span class="card-link" style="cursor:default;color:var(--accent)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          工作日 9:00 - 18:00 (CST)
+        </span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section style="padding-top:40px">
+<div class="container">
+  <div style="text-align:center" class="reveal">
+    <span class="section-label">FAQ</span>
+    <h2 class="section-title">常见问题</h2>
+    <p class="section-desc" style="margin:0 auto">快速找到你关心的答案，或直接联系我们获取更多帮助。</p>
+  </div>
+  <div class="faq-grid">
+
+    <div class="faq-item reveal">
+      <div class="faq-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <h4>如何开始使用 MediVisual Artist？</h4>
+      <p>点击"免费试用"按钮，注册账号后即可在Demo页面体验AI医学插图生成功能。无需安装任何软件。</p>
+      <a href="demo.html" class="faq-link">
+        前往试用
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </div>
+      <h4>支持哪些支付方式？</h4>
+      <p>支持微信支付、支付宝、银行转账及国际信用卡支付。企业用户可申请对公转账及发票开具。</p>
+      <a href="pricing.html" class="faq-link">
+        查看定价
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <h4>输出的插图支持哪些期刊？</h4>
+      <p>内置Nature、Lancet、NEJM、JAMA、BMJ等20+顶级期刊的配图规范检查，自动适配分辨率、色彩模式与格式要求。</p>
+      <a href="features.html" class="faq-link">
+        了解更多
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <h4>是否支持私有化部署？</h4>
+      <p>企业版支持私有化部署，可部署在客户自有服务器或私有云环境，确保数据安全与合规。详情请联系销售团队。</p>
+      <a href="mailto:medivisual@mokangmedical.cn" class="faq-link">
+        联系销售
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h4>数据安全如何保障？</h4>
+      <p>所有数据传输采用TLS 1.3加密，用户上传的医学图像仅用于生成，不做模型训练。支持数据删除请求，符合GDPR规范。</p>
+      <a href="about.html" class="faq-link">
+        了解安全策略
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <h4>如何获取技术支持？</h4>
+      <p>免费版用户可通过GitHub Issue获取社区支持；付费用户享有专属邮件与在线客服支持通道，响应时间≤4小时。</p>
+      <a href="mailto:medivisual@mokangmedical.cn" class="faq-link">
+        联系支持
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section style="padding-top:20px">
+<div class="container">
+  <div class="cta reveal">
+    <h2>准备好了吗？</h2>
+    <p>现在就开始体验AI驱动的医学可视化创作，或联系我们了解更多合作方式。</p>
+    <div class="cta-buttons">
+      <a href="demo.html" class="btn-primary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        免费试用
+      </a>
+      <a href="pricing.html" class="btn-outline">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        查看定价
+      </a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">
+        <svg width="24" height="24" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="30" stroke="url(#ftlg)" stroke-width="4"/><circle cx="50" cy="35" r="6" fill="#00d4ff"/><circle cx="38" cy="55" r="6" fill="#7c3aed"/><circle cx="62" cy="55" r="6" fill="#ff6b35"/><defs><linearGradient id="ftlg" x1="20" y1="20" x2="80" y2="80"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs></svg>
+        MediVisual Artist
+      </div>
+      <p>AI驱动的医学可视化创作平台。深度医学语义理解，2小时交付出版级插图，期刊合规保障。</p>
+    </div>
+    <div class="footer-col">
+      <h4>产品</h4>
+      <a href="features.html">功能详情</a>
+      <a href="demo.html">在线演示</a>
+      <a href="pricing.html">定价方案</a>
+      <a href="portfolio.html">案例展示</a>
+    </div>
+    <div class="footer-col">
+      <h4>关于</h4>
+      <a href="about.html">团队介绍</a>
+      <a href="about.html#vision">愿景使命</a>
+      <a href="changelog.html">更新日志</a>
+      <a href="contact.html">联系我们</a>
+    </div>
+    <div class="footer-col">
+      <h4>支持</h4>
+      <a href="contact.html">联系我们</a>
+      <a href="demo.html">免费试用</a>
+      <a href="mailto:medivisual@mokangmedical.cn">帮助中心</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MediVisual Artist. A MoKang Medical Project.</span>
+    <span>medivisual@mokangmedical.cn</span>
+  </div>
+</div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-top" id="backTop">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18,15 12,9 6,15"/></svg>
+</button>
+
+<script src="shared.js"></script>
+</body>
+</html>

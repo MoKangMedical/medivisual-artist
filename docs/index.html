@@ -1,183 +1,830 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>MediVisual Artist - MediVisual Artist</title>
-<meta name="description" content="AI-powered medical image visualization and annotation platform.">
-<meta property="og:title" content="MediVisual Artist - MediVisual Artist">
-<meta property="og:description" content="AI-powered medical image visualization and annotation platform.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediVisual Artist - AI驱动的出版级医学插图创作平台 | MoKangMedical</title>
+<meta name="description" content="MediVisual Artist: AI驱动的出版级医学插图创作平台。从论文描述到Nature级插图，2小时交付。深度语义理解，期刊合规保障。">
+<meta name="keywords" content="医学插图, AI绘图, 医学可视化, 论文配图, Nature, Cell, 医学插画">
+<meta name="author" content="MoKangMedical">
+<meta property="og:title" content="MediVisual Artist - AI驱动的出版级医学插图创作平台">
+<meta property="og:description" content="从论文描述到Nature级插图，2小时交付。深度语义理解，期刊合规保障。">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://mokangmedical.github.io/medivisual-artist/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1f3e5;</text></svg>">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--p:#d946ef;--bg:#0a0a0f;--s:#12121a;--t:#e2e8f0;--m:#94a3b8;--b:rgba(255,255,255,.06)}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--t);line-height:1.6}
-a{color:var(--p);text-decoration:none}
-.nav{position:fixed;top:0;left:0;right:0;background:rgba(10,10,15,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--b);z-index:1000;padding:.8rem 2rem;display:flex;align-items:center;justify-content:space-between}
-.nb{font-size:1.2rem;font-weight:700;color:var(--p)}
-.nl{display:flex;gap:1.5rem;align-items:center}
-.nl a{color:var(--m);font-size:.85rem;transition:color .2s}
-.nl a:hover{color:var(--t)}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,#d946ef15,transparent 70%)}
-.hc{position:relative;max-width:800px}
-.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;letter-spacing:-.03em;background:linear-gradient(135deg,#fff,#d946ef);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1rem}
-.sub{font-size:1.3rem;color:var(--m);margin-bottom:2rem}
-.cat{display:inline-block;padding:.4rem 1rem;background:#d946ef22;border:1px solid #d946ef44;border-radius:999px;font-size:.8rem;color:var(--p);margin-bottom:2rem}
-.btn{display:inline-block;padding:.8rem 2rem;background:var(--p);color:#fff;border-radius:8px;font-weight:600;transition:all .2s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px #d946ef40}
-.bo{display:inline-block;padding:.6rem 1.5rem;border:1px solid var(--p);color:var(--p);border-radius:8px;font-weight:500;transition:all .2s}
-.bo:hover{background:var(--p);color:#fff}
-.sec{padding:5rem 2rem;max-width:1200px;margin:0 auto}
-.st{text-align:center;font-size:2.2rem;font-weight:700;margin-bottom:.5rem}
-.ss{text-align:center;color:var(--m);margin-bottom:3rem}
-.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
-.fc{background:var(--s);border:1px solid var(--b);border-radius:12px;padding:2rem;transition:all .3s}
-.fc:hover{border-color:#d946ef40;transform:translateY(-4px)}
-.fi{width:40px;height:40px;background:#d946ef20;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1rem}
-.fc h3{font-size:1.1rem;margin-bottom:.5rem}
-.fc p{color:var(--m);font-size:.9rem}
-.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin-top:2rem}
-.pc{background:var(--s);border:1px solid var(--b);border-radius:12px;padding:2rem;text-align:center;transition:all .3s}
-.pc:hover{border-color:#d946ef40}
-.pr{font-size:2.5rem;font-weight:800;color:var(--p);margin:1rem 0}
-.pc p{color:var(--m);margin-bottom:1.5rem}
-.cta{text-align:center;padding:5rem 2rem;background:linear-gradient(135deg,#d946ef10,transparent)}
-footer{text-align:center;padding:2rem;color:var(--m);font-size:.8rem;border-top:1px solid var(--b)}
-footer a{color:var(--m)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin:3rem 0}
-.stat{text-align:center}
-.stat .num{font-size:2.5rem;font-weight:800;color:var(--p)}
-.stat .lbl{color:var(--m);font-size:.85rem}
-@media(max-width:768px){.nl{display:none}.fg,.pg{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
-</style>
+<meta property="og:url" content="https://mokangmedical.cn/medivisual-artist/">
+<meta property="og:image" content="https://mokangmedical.cn/medivisual-artist/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MediVisual Artist - AI驱动的出版级医学插图创作平台">
+<meta name="twitter:description" content="从论文描述到Nature级插图，2小时交付。">
+<meta name="twitter:image" content="https://mokangmedical.cn/medivisual-artist/og-image.png">
+<link rel="canonical" href="https://mokangmedical.cn/medivisual-artist/">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "MediVisual Artist - Medical Visualization",
-  "description": "AI-powered medical visualization platform for creating professional medical illustrations, anatomical diagrams, and research figures.",
-  "url": "https://mokangmedical.github.io/medivisual-artist/",
+  "name": "MediVisual Artist",
+  "description": "AI驱动的出版级医学插图创作平台",
+  "url": "https://mokangmedical.cn/medivisual-artist/",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "AggregateOffer",
+    "lowPrice": "0",
+    "highPrice": "299",
+    "priceCurrency": "CNY"
+  },
   "provider": {
     "@type": "Organization",
-    "name": "MediVisual Artist",
-    "url": "https://github.com/MediVisual Artist"
+    "name": "MoKangMedical",
+    "url": "https://mokangmedical.cn"
   }
 }
 </script>
-  <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0a0a0f">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* === Ecosystem Animations === */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
-.animate-in { animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
-.animate-fade { animation: fadeIn 0.4s ease-out forwards; opacity: 0; }
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-.delay-4 { animation-delay: 0.4s; }
-/* Smooth scroll */
-html { scroll-behavior: smooth; }
-/* Hover lift for cards */
-.hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.hover-lift:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(99,102,241,0.15); }
-</style>
-<script>
-// Intersection Observer for scroll animations
-document.addEventListener('DOMContentLoaded', function() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-in');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-});
-</script>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-<link rel="canonical" href="https://mokangmedical.github.io/medivisual-artist/">
+:root {
+  --bg: #0a0f1a;
+  --bg2: #0d1424;
+  --bg3: #111827;
+  --primary: #00d4ff;
+  --accent: #ff6b35;
+  --purple: #7c3aed;
+  --gradient: linear-gradient(135deg, #00d4ff, #7c3aed, #ff6b35);
+  --glow: 0 0 40px rgba(0, 212, 255, .15);
+  --text: #e2e8f0;
+  --text2: #94a3b8;
+  --text3: #64748b;
+  --border: rgba(255,255,255,.08);
+  --radius: 12px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* OPC Top Nav */
+.opc-topnav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+  background: rgba(10, 15, 26, .95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  height: 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px;
+  font-size: 12px;
+}
+.opc-topnav a { color: var(--text2); text-decoration: none; transition: color .2s; }
+.opc-topnav a:hover { color: var(--primary); }
+.opc-logo {
+  display: flex; align-items: center; gap: 8px;
+  font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: var(--text);
+}
+.opc-logo span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.opc-links { display: flex; gap: 16px; align-items: center; }
+
+/* Main Nav */
+.main-nav {
+  position: fixed; top: 40px; left: 0; right: 0; z-index: 9998;
+  background: rgba(10, 15, 26, .92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: box-shadow .3s;
+}
+.main-nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,.4); }
+.nav-brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: #fff; text-decoration: none; }
+.nav-brand span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  color: var(--text2); text-decoration: none; font-size: 14px; font-weight: 500;
+  position: relative; transition: color .2s; padding: 4px 0;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px;
+  background: var(--primary); transition: width .3s;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  background: var(--primary) !important; color: #0a0f1a !important; font-weight: 600;
+  padding: 8px 20px; border-radius: 8px; font-size: 14px;
+  -webkit-text-fill-color: #0a0f1a !important;
+  transition: box-shadow .3s, transform .2s;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { box-shadow: 0 0 20px rgba(0, 212, 255, .4); transform: translateY(-1px); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { width: 22px; height: 2px; background: var(--text); transition: .3s; }
+
+/* Sections */
+section { padding: 100px 24px; }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-label {
+  font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 2px; color: var(--primary);
+  margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+}
+.section-label::before { content: ''; width: 20px; height: 2px; background: var(--primary); }
+.section-title {
+  font-family: 'Space Grotesk', 'Noto Sans SC', sans-serif; font-size: 36px;
+  font-weight: 700; color: #fff; margin-bottom: 16px; line-height: 1.3;
+}
+.section-desc { font-size: 16px; color: var(--text2); max-width: 600px; margin-bottom: 48px; }
+
+/* Hero */
+.hero {
+  min-height: 100vh; display: flex; align-items: center;
+  padding-top: 140px; position: relative; overflow: hidden;
+}
+#particles { position: absolute; inset: 0; z-index: 0; }
+.hero-content { position: relative; z-index: 1; max-width: 660px; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(0, 212, 255, .1); border: 1px solid rgba(0, 212, 255, .2);
+  padding: 6px 16px; border-radius: 20px; font-size: 13px; color: var(--primary);
+  font-weight: 500; margin-bottom: 24px;
+}
+.pulse-dot {
+  width: 8px; height: 8px; background: var(--primary); border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(1.3); } }
+.hero-title {
+  font-family: 'Space Grotesk', sans-serif; font-size: clamp(40px, 6vw, 64px);
+  font-weight: 800; line-height: 1.1; margin-bottom: 20px;
+  background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-subtitle {
+  font-family: 'Noto Sans SC', sans-serif; font-size: 20px; font-weight: 600;
+  color: #fff; margin-bottom: 16px;
+}
+.hero-desc { font-size: 16px; color: var(--text2); line-height: 1.8; margin-bottom: 32px; }
+.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--primary); color: #0a0f1a; font-weight: 600; font-size: 15px;
+  padding: 14px 32px; border-radius: 10px; text-decoration: none;
+  transition: box-shadow .3s, transform .2s;
+}
+.btn-primary:hover { box-shadow: 0 0 30px rgba(0, 212, 255, .4); transform: translateY(-2px); }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: var(--text); font-weight: 600; font-size: 15px;
+  padding: 14px 32px; border-radius: 10px; text-decoration: none;
+  border: 1px solid var(--border); transition: border-color .3s, transform .2s;
+}
+.btn-outline:hover { border-color: var(--primary); transform: translateY(-2px); }
+.hero-visual {
+  position: absolute; right: -60px; top: 50%; transform: translateY(-50%);
+  z-index: 0; opacity: .6;
+}
+
+/* Stats */
+.stats-bar {
+  padding: 60px 24px; background: var(--bg2);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+.stat-num {
+  font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700;
+  background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 4px;
+}
+.stat-label { font-size: 14px; color: var(--text2); }
+
+/* Pain Points */
+.pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.pain-card {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 36px 28px; transition: transform .3s, box-shadow .3s;
+}
+.pain-card:hover { transform: translateY(-4px); box-shadow: var(--glow); }
+.pain-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: rgba(255, 107, 53, .1); display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+}
+.pain-icon svg { width: 24px; height: 24px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
+.pain-card h3 { font-family: 'Noto Sans SC', sans-serif; font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 10px; }
+.pain-card p { font-size: 14px; color: var(--text2); line-height: 1.7; }
+
+/* Features */
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.feature-card {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 36px 28px; transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+.feature-card:hover { transform: translateY(-4px); box-shadow: var(--glow); border-color: rgba(0, 212, 255, .2); }
+.feature-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: rgba(0, 212, 255, .1); display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+}
+.feature-icon svg { width: 24px; height: 24px; stroke: var(--primary); fill: none; stroke-width: 1.5; }
+.feature-card h3 { font-family: 'Noto Sans SC', sans-serif; font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 10px; }
+.feature-card p { font-size: 14px; color: var(--text2); line-height: 1.7; }
+
+/* Workflow */
+.workflow-steps { display: flex; gap: 0; position: relative; justify-content: space-between; }
+.workflow-steps::before {
+  content: ''; position: absolute; top: 24px; left: 60px; right: 60px;
+  height: 2px; background: linear-gradient(90deg, #00d4ff, #7c3aed, #ff6b35, #22c55e);
+}
+.workflow-step { text-align: center; flex: 1; position: relative; z-index: 1; }
+.workflow-dot {
+  width: 48px; height: 48px; border-radius: 50%; margin: 0 auto 20px;
+  display: flex; align-items: center; justify-content: center;
+  border: 3px solid; background: var(--bg);
+}
+.workflow-step:nth-child(1) .workflow-dot { border-color: #00d4ff; }
+.workflow-step:nth-child(2) .workflow-dot { border-color: #7c3aed; }
+.workflow-step:nth-child(3) .workflow-dot { border-color: #ff6b35; }
+.workflow-step:nth-child(4) .workflow-dot { border-color: #22c55e; }
+.workflow-dot-inner { width: 16px; height: 16px; border-radius: 50%; }
+.workflow-step:nth-child(1) .workflow-dot-inner { background: #00d4ff; }
+.workflow-step:nth-child(2) .workflow-dot-inner { background: #7c3aed; }
+.workflow-step:nth-child(3) .workflow-dot-inner { background: #ff6b35; }
+.workflow-step:nth-child(4) .workflow-dot-inner { background: #22c55e; }
+.workflow-step h4 { font-family: 'Noto Sans SC', sans-serif; font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+.workflow-step p { font-size: 13px; color: var(--text2); }
+
+/* Comparison */
+.comp-table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); }
+.comp-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.comp-table th, .comp-table td { padding: 16px 20px; text-align: left; border-bottom: 1px solid var(--border); }
+.comp-table thead th {
+  background: var(--bg3); color: var(--text); font-weight: 600; font-size: 13px;
+  text-transform: uppercase; letter-spacing: 1px;
+}
+.comp-table thead th.highlight { color: var(--primary); border-top: 2px solid var(--primary); }
+.comp-table tbody td:first-child { font-weight: 500; color: #fff; }
+.comp-table tbody td.highlight { background: rgba(0, 212, 255, .04); color: var(--primary); font-weight: 500; }
+.comp-table tbody tr:last-child td { border-bottom: none; }
+.comp-check { color: var(--primary); }
+
+/* Testimonials */
+.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.testi-card {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 32px 28px; transition: transform .3s;
+}
+.testi-card:hover { transform: translateY(-4px); }
+.testi-stars { color: #fbbf24; font-size: 14px; margin-bottom: 16px; letter-spacing: 2px; }
+.testi-text { font-size: 15px; color: var(--text); line-height: 1.8; margin-bottom: 20px; font-style: italic; }
+.testi-author { font-size: 14px; font-weight: 600; color: var(--primary); }
+
+/* Pricing */
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; }
+.pricing-card {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 36px 28px; text-align: center; position: relative; transition: transform .3s;
+}
+.pricing-card.recommended { border-color: var(--primary); box-shadow: var(--glow); transform: scale(1.02); }
+.pricing-card.recommended::before {
+  content: 'RECOMMENDED'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--primary); color: #0a0f1a; font-size: 11px; font-weight: 700;
+  padding: 4px 16px; border-radius: 10px; letter-spacing: 1px;
+}
+.pricing-card:hover { transform: translateY(-4px); }
+.pricing-card.recommended:hover { transform: scale(1.02) translateY(-4px); }
+.pricing-name { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+.pricing-price {
+  font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 700; color: #fff;
+  margin-bottom: 24px;
+}
+.pricing-price span { font-size: 14px; font-weight: 400; color: var(--text2); }
+.pricing-features { list-style: none; text-align: left; margin-bottom: 28px; }
+.pricing-features li {
+  padding: 8px 0; font-size: 14px; color: var(--text2);
+  border-bottom: 1px solid rgba(255,255,255,.04);
+  display: flex; align-items: center; gap: 8px;
+}
+.pricing-features li::before { content: ''; width: 6px; height: 6px; background: var(--primary); border-radius: 50%; flex-shrink: 0; }
+.pricing-card .btn-primary { width: 100%; justify-content: center; }
+.pricing-card .btn-outline { width: 100%; justify-content: center; }
+
+/* CTA Section */
+.cta-section {
+  text-align: center; padding: 100px 24px;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+  position: relative;
+}
+.cta-section::before {
+  content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 212, 255, .08) 0%, transparent 70%);
+}
+.cta-section .section-title { font-size: 36px; }
+.cta-section .section-desc { margin: 0 auto 32px; text-align: center; }
+.cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
+
+/* Footer */
+footer {
+  background: var(--bg2); border-top: 1px solid var(--border);
+  padding: 60px 24px 30px;
+}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer-brand p { font-size: 14px; color: var(--text2); margin-top: 12px; line-height: 1.7; }
+.footer-col h4 { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 16px; }
+.footer-col a { display: block; font-size: 14px; color: var(--text2); text-decoration: none; padding: 4px 0; transition: color .2s; }
+.footer-col a:hover { color: var(--primary); }
+.footer-bottom {
+  border-top: 1px solid var(--border); padding-top: 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; color: var(--text3);
+}
+.footer-bottom a { color: var(--primary); text-decoration: none; }
+
+/* Back to top */
+.back-top {
+  position: fixed; bottom: 30px; right: 30px; z-index: 9990;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(0, 212, 255, .15); border: 1px solid rgba(0, 212, 255, .3);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; opacity: 0; pointer-events: none; transition: .3s;
+}
+.back-top.visible { opacity: 1; pointer-events: auto; }
+.back-top svg { width: 20px; height: 20px; stroke: var(--primary); fill: none; stroke-width: 2; }
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Responsive */
+@media (max-width: 968px) {
+  .nav-links { display: none; position: fixed; top: 100px; left: 0; right: 0; background: var(--bg2); flex-direction: column; padding: 24px; gap: 20px; border-bottom: 1px solid var(--border); }
+  .nav-links.open { display: flex; }
+  .hamburger { display: flex; }
+  .hero-visual { display: none; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .pain-grid, .features-grid, .testi-grid, .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-card.recommended { transform: none; }
+  .pricing-card.recommended:hover { transform: translateY(-4px); }
+  .workflow-steps { flex-direction: column; gap: 24px; }
+  .workflow-steps::before { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+@media (max-width: 640px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .stat-num { font-size: 36px; }
+  .section-title { font-size: 28px; }
+  .hero-btns { flex-direction: column; }
+  .hero-btns a { text-align: center; justify-content: center; }
+  .footer-grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
-<nav class="nav">
-<a href="https://mokangmedical.github.io/opc-homepage/" class="nb">MediVisual Artist</a>
-<div class="nl">
-<a href="#features">Features</a>
-<a href="#pricing">Pricing</a>
-<a href="https://github.com/MediVisual Artist/medivisual-artist">GitHub</a><a href="pricing.html">Pricing</a>
-<a href="https://github.com/MediVisual Artist">GitHub</a>
-<a href="https://mokangmedical.github.io/opc-homepage/">Ecosystem</a>
-</div>
+
+<!-- OPC Top Nav -->
+<nav class="opc-topnav">
+  <a href="https://mokangmedical.cn" class="opc-logo">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="url(#opcGrad)" stroke-width="2"><defs><linearGradient id="opcGrad" x1="0" y1="0" x2="24" y2="24"><stop offset="0%" stop-color="#00d4ff"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    <span>MoKangMedical</span>
+  </a>
+  <div class="opc-links">
+    <a href="../opc-homepage/docs/index.html">OPC Homepage</a>
+    <a href="https://github.com/MoKangMedical" target="_blank">GitHub</a>
+    <a href="../opc-hub/docs/index.html">OPC Hub</a>
+  </div>
 </nav>
-<section class="hero">
-<div class="hc">
-<span class="cat">Medical Imaging</span>
-<h1>MediVisual Artist</h1>
-<p class="sub">Medical Visualization Studio</p>
-<div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-<a href="https://github.com/MediVisual Artist/medivisual-artist" class="btn">View on GitHub</a><a href="pricing.html">Pricing</a>
-<a href="https://github.com/MediVisual Artist">GitHub</a>
-<a href="#features" class="bo">Explore Features</a>
-</div>
-</div>
+
+<!-- Main Nav -->
+<nav class="main-nav" id="mainNav">
+  <a href="index.html" class="nav-brand">MediVisual <span>Artist</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">首页</a>
+    <a href="features.html">功能</a>
+    <a href="demo.html">Demo</a>
+    <a href="pricing.html">定价</a>
+    <a href="about.html">关于</a>
+    <a href="portfolio.html">案例</a>
+    <a href="demo.html" class="nav-cta">免费试用</a>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <canvas id="particles"></canvas>
+  <div class="container hero-content">
+    <div class="hero-badge"><div class="pulse-dot"></div>AI医学可视化</div>
+    <h1 class="hero-title">MediVisual Artist</h1>
+    <p class="hero-subtitle">AI驱动的出版级医学插图创作平台</p>
+    <p class="hero-desc">从论文描述到Nature级插图，2小时交付。深度语义理解，期刊合规保障。</p>
+    <div class="hero-btns">
+      <a href="demo.html" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        免费试用
+      </a>
+      <a href="portfolio.html" class="btn-outline">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        查看案例
+      </a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <svg width="420" height="420" viewBox="0 0 420 420" fill="none">
+      <circle cx="150" cy="150" r="80" stroke="#00d4ff" stroke-width="1" opacity=".3"/>
+      <circle cx="150" cy="150" r="60" stroke="#00d4ff" stroke-width=".5" opacity=".2"/>
+      <circle cx="270" cy="170" r="70" stroke="#7c3aed" stroke-width="1" opacity=".3"/>
+      <circle cx="270" cy="170" r="50" stroke="#7c3aed" stroke-width=".5" opacity=".2"/>
+      <circle cx="200" cy="280" r="65" stroke="#ff6b35" stroke-width="1" opacity=".3"/>
+      <circle cx="200" cy="280" r="45" stroke="#ff6b35" stroke-width=".5" opacity=".2"/>
+      <line x1="150" y1="150" x2="270" y2="170" stroke="url(#lg1)" stroke-width=".5" opacity=".4"/>
+      <line x1="270" y1="170" x2="200" y2="280" stroke="url(#lg2)" stroke-width=".5" opacity=".4"/>
+      <line x1="200" y1="280" x2="150" y2="150" stroke="url(#lg3)" stroke-width=".5" opacity=".4"/>
+      <circle cx="150" cy="150" r="6" fill="#00d4ff" opacity=".6"/>
+      <circle cx="270" cy="170" r="6" fill="#7c3aed" opacity=".6"/>
+      <circle cx="200" cy="280" r="6" fill="#ff6b35" opacity=".6"/>
+      <defs>
+        <linearGradient id="lg1" x1="150" y1="150" x2="270" y2="170"><stop offset="0%" stop-color="#00d4ff"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient>
+        <linearGradient id="lg2" x1="270" y1="170" x2="200" y2="280"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b35"/></linearGradient>
+        <linearGradient id="lg3" x1="200" y1="280" x2="150" y2="150"><stop offset="0%" stop-color="#ff6b35"/><stop offset="100%" stop-color="#00d4ff"/></linearGradient>
+      </defs>
+    </svg>
+  </div>
 </section>
-<section class="sec" id="features">
-<h2 class="st">Capabilities</h2>
-<p class="ss">AI-powered medical image visualization and annotation platform.</p>
-<div class="fg"><div class="fc"><div class="fi">◆</div><h3>3D Rendering</h3><p>Advanced 3d rendering capabilities powered by AI</p></div><div class="fc"><div class="fi">◇</div><h3>AI Segmentation</h3><p>Advanced ai segmentation capabilities powered by AI</p></div><div class="fc"><div class="fi">◈</div><h3>Annotation Tools</h3><p>Advanced annotation tools capabilities powered by AI</p></div><div class="fc"><div class="fi">◉</div><h3>Collaboration</h3><p>Advanced collaboration capabilities powered by AI</p></div><div class="fc"><div class="fi">◊</div><h3>PACS Integration</h3><p>Advanced pacs integration capabilities powered by AI</p></div><div class="fc"><div class="fi">○</div><h3>Export Suite</h3><p>Advanced export suite capabilities powered by AI</p></div>
-</div>
+
+<!-- Stats -->
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="reveal"><div class="stat-num" data-target="2">0</div><div class="stat-label">平均交付时间</div></div>
+      <div class="reveal"><div class="stat-num" data-target="95">0</div><div class="stat-label">一次性通过率</div></div>
+      <div class="reveal"><div class="stat-num" data-target="6">0</div><div class="stat-label">期刊风格覆盖</div></div>
+      <div class="reveal"><div class="stat-num" data-target="80">0</div><div class="stat-label">成本节省</div></div>
+    </div>
+  </div>
 </section>
-<section class="sec" id="pricing">
-<h2 class="st">Pricing</h2>
-<p class="ss">Flexible plans for every scale</p>
-<div class="pg">
-<div class="pc"><h3>Starter</h3><div class="pr">Free</div><p>Basic features and community support</p><a href="https://github.com/MediVisual Artist/medivisual-artist" class="bo">Get Started</a></div>
-<div class="pc"><h3>Professional</h3><div class="pr">$299/mo</div><p>Full access with priority support</p><a href="https://github.com/MediVisual Artist/medivisual-artist" class="bo">Start Trial</a></div>
-<div class="pc"><h3>Enterprise</h3><div class="pr">Custom</div><p>Custom deployment with SLA</p><a href="https://github.com/MediVisual Artist/medivisual-artist" class="bo">Contact Sales</a></div>
-</div>
+
+<!-- Pain Points -->
+<section id="painpoints">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">行业痛点</div>
+      <h2 class="section-title">为什么选择AI医学可视化</h2>
+      <p class="section-desc">传统医学插图创作存在三大核心痛点，严重制约科研效率。</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <div class="pain-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>耗时过长</h3>
+        <p>传统医学插图外包需要2-3天，延误论文投稿进度，影响科研节奏与毕业时间线。</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>成本高昂</h3>
+        <p>专业医学插图单张500-2000元，博士生难以承受多图需求的经济压力。</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <h3>质量不稳定</h3>
+        <p>设计师缺乏医学背景，解剖准确性难以保证，反复沟通修改效率极低。</p>
+      </div>
+    </div>
+  </div>
 </section>
-<section class="cta">
-<h2>Ready to get started?</h2>
-<p style="color:var(--m);margin-bottom:2rem">Join leading organizations using MediVisual Artist</p>
-<a href="https://github.com/MediVisual Artist/medivisual-artist" class="btn">Get Started Free</a>
+
+<!-- Features -->
+<section id="features" style="background: var(--bg2);">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:48px;">
+      <div class="section-label" style="justify-content:center;">核心能力</div>
+      <h2 class="section-title">六大核心能力</h2>
+      <p class="section-desc" style="margin:0 auto;">从语义理解到合规输出，全链路AI驱动。</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><line x1="9" y1="21" x2="15" y2="21"/><line x1="10" y1="24" x2="14" y2="24"/></svg></div>
+        <h3>AI语义解析</h3>
+        <p>GPT-4深度语义理解，自动识别解剖结构、病理过程、药物靶点。</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+        <h3>智能Prompt生成</h3>
+        <p>从语义图谱到视觉表达，内置医学可视化最佳实践模板。</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.75-.15 2.55-.42"/><path d="M21.64 14.36c.39-.75.36-1.65-.09-2.39"/></svg></div>
+        <h3>多风格输出</h3>
+        <p>期刊论文/教学课件/商业路演三大风格一键切换。</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>期刊合规审查</h3>
+        <p>Nature/Cell/Lancet等顶刊格式规范自动检测。</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/><path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"/></svg></div>
+        <h3>极速迭代</h3>
+        <p>30秒生成初稿，3轮迭代优化，高效精准。</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3>中英双语</h3>
+        <p>专为中文医学研究者优化，完美支持英文期刊投稿。</p>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- Workflow -->
+<section id="workflow">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:48px;">
+      <div class="section-label" style="justify-content:center;">工作流程</div>
+      <h2 class="section-title">四步完成创作</h2>
+      <p class="section-desc" style="margin:0 auto;">从论文描述到出版级插图，全流程AI驱动。</p>
+    </div>
+    <div class="workflow-steps reveal">
+      <div class="workflow-step">
+        <div class="workflow-dot"><div class="workflow-dot-inner"></div></div>
+        <h4>输入描述</h4>
+        <p>粘贴论文摘要或关键描述</p>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-dot"><div class="workflow-dot-inner"></div></div>
+        <h4>AI解析</h4>
+        <p>深度语义理解与结构化</p>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-dot"><div class="workflow-dot-inner"></div></div>
+        <h4>图像生成</h4>
+        <p>AI多模型融合创作</p>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-dot"><div class="workflow-dot-inner"></div></div>
+        <h4>合规输出</h4>
+        <p>期刊规范审查与文件交付</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison -->
+<section id="comparison" style="background: var(--bg2);">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:48px;">
+      <div class="section-label" style="justify-content:center;">对比优势</div>
+      <h2 class="section-title">全面对比</h2>
+      <p class="section-desc" style="margin:0 auto;">与传统外包和通用AI工具的对比一目了然。</p>
+    </div>
+    <div class="comp-table-wrap reveal">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>功能特性</th>
+            <th class="highlight">MediVisual Artist</th>
+            <th>传统外包</th>
+            <th>通用AI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>交付时间</td><td class="highlight">2小时</td><td>2-3天</td><td>N/A</td></tr>
+          <tr><td>医学准确性</td><td class="highlight">95%+</td><td>取决于设计师</td><td>低</td></tr>
+          <tr><td>期刊合规</td><td class="highlight">自动检测</td><td>手动检查</td><td>无</td></tr>
+          <tr><td>价格</td><td class="highlight">299元/月</td><td>500-2000元/张</td><td>免费但不可用</td></tr>
+          <tr><td>迭代修改</td><td class="highlight">无限</td><td>额外收费</td><td>无</td></tr>
+          <tr><td>中英双语</td><td class="highlight">原生支持</td><td>需指定</td><td>不支持</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:48px;">
+      <div class="section-label" style="justify-content:center;">用户反馈</div>
+      <h2 class="section-title">来自科研一线的声音</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">*****</div>
+        <p class="testi-text">"以前画一张图要找设计师沟通3天，现在2小时搞定，质量还更好。"</p>
+        <div class="testi-author">张博士, 医学博士生</div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">*****</div>
+        <p class="testi-text">"Nature审稿人对我们的配图质量给予了高度评价，MediVisual Artist功不可没。"</p>
+        <div class="testi-author">李教授, 副主任医师</div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">*****</div>
+        <p class="testi-text">"路演材料的医学插图终于达到了投资人期望的专业水准。"</p>
+        <div class="testi-author">王经理, 药企研发部</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" style="background: var(--bg2);">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:48px;">
+      <div class="section-label" style="justify-content:center;">定价方案</div>
+      <h2 class="section-title">灵活定价，按需选择</h2>
+      <p class="section-desc" style="margin:0 auto;">从个人研究者到企业团队，总有一款适合您。</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <div class="pricing-name">Starter</div>
+        <div class="pricing-price">免费</div>
+        <ul class="pricing-features">
+          <li>5张/月</li>
+          <li>基础风格</li>
+          <li>720p PNG</li>
+        </ul>
+        <a href="demo.html" class="btn-outline">免费开始</a>
+      </div>
+      <div class="pricing-card recommended reveal">
+        <div class="pricing-name">Professional</div>
+        <div class="pricing-price">299<span>元/月</span></div>
+        <ul class="pricing-features">
+          <li>无限生成</li>
+          <li>全部风格</li>
+          <li>600DPI TIFF/EPS</li>
+          <li>合规审查</li>
+        </ul>
+        <a href="demo.html" class="btn-primary">立即订阅</a>
+      </div>
+      <div class="pricing-card reveal">
+        <div class="pricing-name">Enterprise</div>
+        <div class="pricing-price">定制</div>
+        <ul class="pricing-features">
+          <li>API批量接入</li>
+          <li>团队协作</li>
+          <li>私有化部署</li>
+        </ul>
+        <a href="mailto:medivisual@mokangmedical.cn" class="btn-outline">联系我们</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container reveal">
+    <div class="section-label" style="justify-content:center;">立即开始</div>
+    <h2 class="section-title">准备好开始创作了吗?</h2>
+    <p class="section-desc">上传论文摘要，2小时内获得出版级医学插图。首张免费。</p>
+    <div class="cta-btns">
+      <a href="demo.html" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        免费试用
+      </a>
+      <a href="mailto:medivisual@mokangmedical.cn" class="btn-outline">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        联系我们
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer>
-<p>&copy; 2025 MediVisual Artist. All rights reserved. | <a href="https://mokangmedical.github.io/opc-homepage/">Ecosystem</a> | <a href="https://github.com/MediVisual Artist">GitHub</a><a href="pricing.html">Pricing</a>
-<a href="https://github.com/MediVisual Artist">GitHub</a></p>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-brand" style="font-size:20px;">MediVisual <span>Artist</span></a>
+        <p>AI驱动的出版级医学插图创作平台。<br>MoKangMedical旗下产品，致力于用AI技术赋能医学可视化创作。</p>
+      </div>
+      <div class="footer-col">
+        <h4>产品</h4>
+        <a href="features.html">功能详情</a>
+        <a href="demo.html">在线演示</a>
+        <a href="pricing.html">定价方案</a>
+        <a href="portfolio.html">案例展示</a>
+      </div>
+      <div class="footer-col">
+        <h4>关于</h4>
+        <a href="about.html">团队介绍</a>
+        <a href="about.html#vision">愿景使命</a>
+        <a href="about.html#join">加入我们</a>
+      </div>
+      <div class="footer-col">
+        <h4>支持</h4>
+        <a href="mailto:medivisual@mokangmedical.cn">联系我们</a>
+        <a href="demo.html">免费试用</a>
+        <a href="#">帮助中心</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024-2026 MoKangMedical. All rights reserved.</span>
+      <a href="mailto:medivisual@mokangmedical.cn">medivisual@mokangmedical.cn</a>
+    </div>
+  </div>
 </footer>
-<script>
-// Scroll reveal animation
-const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){i.target.style.opacity='1';i.target.style.transform='translateY(0)';obs.unobserve(i.target)}})},{threshold:.1});
-document.querySelectorAll('.fc,.pc').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='all 0.6s ease';obs.observe(el)});
-// Counter animation
-document.querySelectorAll('.stat .num').forEach(el=>{const t=parseInt(el.dataset.val||0);let c=0;const s=t/60;const tm=setInterval(()=>{c+=s;if(c>=t){c=t;clearInterval(tm)}el.textContent=Math.floor(c).toLocaleString()},25)});
-</script>
 
-<section style="padding:4rem 2rem;max-width:1000px;margin:0 auto">
-<h3 style="font-size:1.5rem;font-weight:800;color:#fff;text-align:center;margin-bottom:0.5rem">Related Projects</h3>
-<p style="color:rgba(255,255,255,0.5);text-align:center;margin-bottom:2rem;font-size:0.95rem">Explore more from the MediVisual Artist ecosystem</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem">
-<a href="https://mokangmedical.github.io/DrugMind/" style="display:block;background:rgba(15,15,40,0.6);border:1px solid rgba(99,102,241,0.15);border-radius:12px;padding:1.5rem;text-decoration:none;color:#fff;transition:all 0.3s"><h4 style="font-size:1rem;font-weight:700;margin:0 0 0.5rem">DrugMind</h4><p style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin:0;line-height:1.4">Drug discovery</p></a>
-<a href="https://mokangmedical.github.io/medichat-rd/" style="display:block;background:rgba(15,15,40,0.6);border:1px solid rgba(99,102,241,0.15);border-radius:12px;padding:1.5rem;text-decoration:none;color:#fff;transition:all 0.3s"><h4 style="font-size:1rem;font-weight:700;margin:0 0 0.5rem">medichat-rd</h4><p style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin:0;line-height:1.4">Clinical intelligence</p></a>
-<a href="https://mokangmedical.github.io/virtual-cell/" style="display:block;background:rgba(15,15,40,0.6);border:1px solid rgba(99,102,241,0.15);border-radius:12px;padding:1.5rem;text-decoration:none;color:#fff;transition:all 0.3s"><h4 style="font-size:1rem;font-weight:700;margin:0 0 0.5rem">virtual-cell</h4><p style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin:0;line-height:1.4">Cell visualization</p></a>
+<!-- Back to top -->
+<div class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
 </div>
-<div style="text-align:center;margin-top:2rem"><a href="https://mokangmedical.github.io/opc-homepage/" style="color:#818cf8;text-decoration:none;font-weight:600;font-size:0.9rem">View All Projects →</a></div>
-</section>
 
+<script>
+// Particle canvas
+(function() {
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  const count = 80;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  for (let i = 0; i < count; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      r: Math.random() * 1.5 + 0.5
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(0, 212, 255, 0.3)';
+      ctx.fill();
+      for (let j = i + 1; j < particles.length; j++) {
+        const p2 = particles[j];
+        const dx = p.x - p2.x, dy = p.y - p2.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 150) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = 'rgba(0, 212, 255, ' + (0.08 * (1 - dist / 150)) + ')';
+          ctx.stroke();
+        }
+      }
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Counter animation
+let counted = false;
+const statsObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !counted) {
+      counted = true;
+      document.querySelectorAll('.stat-num').forEach(el => {
+        const target = parseInt(el.dataset.target);
+        const suffix = el.parentElement.querySelector('.stat-label').textContent.includes('时间') ? 'h' : '%';
+        let current = 0;
+        const step = Math.max(1, Math.floor(target / 40));
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) { current = target; clearInterval(timer); }
+          el.textContent = current + (target >= 6 ? suffix : 'h');
+        }, 30);
+      });
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.stats-grid').forEach(el => statsObs.observe(el));
+
+// Nav scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
+  document.getElementById('backTop').classList.toggle('visible', window.scrollY > 400);
+});
+</script>
 </body>
 </html>

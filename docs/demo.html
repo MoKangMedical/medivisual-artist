@@ -131,25 +131,45 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,15,26,.95);backdrop-fil
   .sidebar{max-height:none;border-right:none;border-bottom:1px solid var(--border)}
   .main{max-height:none}
 }
+.logo svg{width:28px;height:28px}
+.nav-links a{position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--primary);transition:.3s}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{background:var(--primary)!important;color:var(--bg)!important;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.85rem;transition:.3s;-webkit-text-fill-color:var(--bg)!important}
+.nav-cta:hover{background:#fff!important;transform:translateY(-1px)}
+.nav-cta::after{display:none!important}
+nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
+.mobile-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+@media(max-width:768px){.nav-links{display:none}.nav-links.show{display:flex;position:fixed;top:64px;left:0;right:0;background:rgba(10,15,26,.98);backdrop-filter:blur(20px);flex-direction:column;padding:24px;gap:16px;border-bottom:1px solid var(--border)}.mobile-toggle{display:block}}
+.back-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;background:var(--bg3);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(20px);transition:.3s;z-index:999;color:var(--text2)}.back-top.show{opacity:1;transform:translateY(0)}.back-top:hover{border-color:var(--primary);color:var(--primary)}
 </style>
+<meta property="og:title" content="在线演示 - MediVisual Artist">
+<meta property="og:description" content="输入医学描述，AI自动生成出版级医学插图，支持DALL-E 3">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mokangmedical.github.io/medivisual-artist/">
 </head>
 <body>
 
-<nav>
-<div class="nav-inner">
-  <a href="index.html" class="logo">
-    <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="30" stroke="url(#lg)" stroke-width="4"/><circle cx="50" cy="35" r="6" fill="#00d4ff"/><circle cx="38" cy="55" r="6" fill="#7c3aed"/><circle cx="62" cy="55" r="6" fill="#ff6b35"/><line x1="50" y1="41" x2="38" y2="49" stroke="#00d4ff" stroke-width="2" opacity=".5"/><line x1="50" y1="41" x2="62" y2="49" stroke="#00d4ff" stroke-width="2" opacity=".5"/><line x1="38" y1="55" x2="62" y2="55" stroke="#00d4ff" stroke-width="2" opacity=".5"/><defs><linearGradient id="lg" x1="20" y1="20" x2="80" y2="80"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs></svg>
-    MediVisual Artist
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html">首页</a></li>
-    <li><a href="features.html">功能</a></li>
-    <li><a href="demo.html" class="active">Demo</a></li>
-    <li><a href="pricing.html">定价</a></li>
-    <li><a href="about.html">关于</a></li>
-  </ul>
-</div>
-</nav>
+  <nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="30" stroke="url(#navlg)" stroke-width="4"/><circle cx="50" cy="35" r="6" fill="#00d4ff"/><circle cx="38" cy="55" r="6" fill="#7c3aed"/><circle cx="62" cy="55" r="6" fill="#ff6b35"/><line x1="50" y1="41" x2="38" y2="49" stroke="#00d4ff" stroke-width="2" opacity=".5"/><line x1="50" y1="41" x2="62" y2="49" stroke="#00d4ff" stroke-width="2" opacity=".5"/><line x1="38" y1="55" x2="62" y2="55" stroke="#00d4ff" stroke-width="2" opacity=".5"/><defs><linearGradient id="navlg" x1="20" y1="20" x2="80" y2="80"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs></svg>
+      MediVisual Artist
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="features.html">功能</a></li>
+      <li><a href="demo.html" class="active">Demo</a></li>
+      <li><a href="pricing.html">定价</a></li>
+      <li><a href="about.html">关于</a></li>
+      <li><a href="portfolio.html">案例</a></li>
+      <li><a href="demo.html" class="nav-cta">免费试用</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('show')">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  </nav>
 
 <div class="app">
   <!-- Sidebar -->
@@ -590,6 +610,43 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('apiStatus').className = 'api-status ' + (hasKey ? 'ok' : 'missing');
   });
 });
+window.addEventListener('scroll',()=>{const nb=document.getElementById('navbar');if(nb)nb.classList.toggle('scrolled',window.scrollY>50)});
 </script>
+  <footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <svg width="24" height="24" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="30" stroke="url(#ftlg)" stroke-width="4"/><circle cx="50" cy="35" r="6" fill="#00d4ff"/><circle cx="38" cy="55" r="6" fill="#7c3aed"/><circle cx="62" cy="55" r="6" fill="#ff6b35"/><defs><linearGradient id="ftlg" x1="20" y1="20" x2="80" y2="80"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs></svg>
+          MediVisual Artist
+        </div>
+        <p>AI驱动的医学可视化创作平台。深度医学语义理解，2小时交付出版级插图，期刊合规保障。</p>
+      </div>
+      <div class="footer-col">
+        <h4>产品</h4>
+        <a href="features.html">功能详情</a>
+        <a href="demo.html">在线演示</a>
+        <a href="pricing.html">定价方案</a>
+        <a href="portfolio.html">案例展示</a>
+      </div>
+      <div class="footer-col">
+        <h4>关于</h4>
+        <a href="about.html">团队介绍</a>
+        <a href="about.html#vision">愿景使命</a>
+        <a href="mailto:medivisual@mokangmedical.cn">加入我们</a>
+      </div>
+      <div class="footer-col">
+        <h4>支持</h4>
+        <a href="mailto:medivisual@mokangmedical.cn">联系我们</a>
+        <a href="demo.html">免费试用</a>
+        <a href="mailto:medivisual@mokangmedical.cn">帮助中心</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>2026 MediVisual Artist. A MoKangMedical Project.</span>
+      <span>medivisual@mokangmedical.cn</span>
+    </div>
+  </div>
+  </footer>
 </body>
 </html>

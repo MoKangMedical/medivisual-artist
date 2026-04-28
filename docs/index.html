@@ -41,6 +41,7 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
 .logo svg{width:28px;height:28px}
 .nav-links{display:flex;gap:32px;list-style:none;align-items:center}
 .nav-links a{color:var(--text2);font-size:.9rem;font-weight:500;transition:.3s;position:relative}
+.nav-links a{position:relative}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--primary);transition:.3s}
 .nav-links a:hover::after{width:100%}
 .nav-links a:hover{color:var(--primary)}
@@ -232,32 +233,32 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
   .comp-table th,.comp-table td{padding:10px 12px}
   .demo-body{padding:32px 20px}
 }
+.nav-links a.active{color:var(--primary)}
 </style>
 </head>
 <body>
 
 <!-- Nav -->
-<nav id="navbar">
-<div class="nav-inner">
-  <a href="index.html" class="logo">
-    <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="30" stroke="url(#lg)" stroke-width="4"/><circle cx="50" cy="35" r="6" fill="#00d4ff"/><circle cx="38" cy="55" r="6" fill="#7c3aed"/><circle cx="62" cy="55" r="6" fill="#ff6b35"/><line x1="50" y1="41" x2="38" y2="49" stroke="#00d4ff" stroke-width="2" opacity=".5"/><line x1="50" y1="41" x2="62" y2="49" stroke="#00d4ff" stroke-width="2" opacity=".5"/><line x1="38" y1="55" x2="62" y2="55" stroke="#00d4ff" stroke-width="2" opacity=".5"/><defs><linearGradient id="lg" x1="20" y1="20" x2="80" y2="80"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs></svg>
-    MediVisual Artist
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#features">功能</a></li>
-    <li><a href="#workflow">工作流</a></li>
-    <li><a href="#demo">演示</a></li>
-    <li><a href="#comparison">对比</a></li>
-    <li><a href="pricing.html">定价</a></li>
-    <li><a href="about.html">关于</a></li>
-    <li><a href="portfolio.html">案例</a></li>
-    <li><a href="#contact" class="nav-cta">免费试用</a></li>
-  </ul>
-  <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('show')">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-  </button>
-</div>
-</nav>
+  <nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="30" stroke="url(#navlg)" stroke-width="4"/><circle cx="50" cy="35" r="6" fill="#00d4ff"/><circle cx="38" cy="55" r="6" fill="#7c3aed"/><circle cx="62" cy="55" r="6" fill="#ff6b35"/><line x1="50" y1="41" x2="38" y2="49" stroke="#00d4ff" stroke-width="2" opacity=".5"/><line x1="50" y1="41" x2="62" y2="49" stroke="#00d4ff" stroke-width="2" opacity=".5"/><line x1="38" y1="55" x2="62" y2="55" stroke="#00d4ff" stroke-width="2" opacity=".5"/><defs><linearGradient id="navlg" x1="20" y1="20" x2="80" y2="80"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs></svg>
+      MediVisual Artist
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">首页</a></li>
+      <li><a href="features.html">功能</a></li>
+      <li><a href="demo.html">Demo</a></li>
+      <li><a href="pricing.html">定价</a></li>
+      <li><a href="about.html">关于</a></li>
+      <li><a href="portfolio.html">案例</a></li>
+      <li><a href="demo.html" class="nav-cta">免费试用</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('show')">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  </nav>
 
 <!-- Hero -->
 <section class="hero">
@@ -615,40 +616,42 @@ footer{padding:60px 0 32px;border-top:1px solid var(--border)}
 </section>
 
 <!-- Footer -->
-<footer>
-<div class="container">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="logo">
-        <svg width="24" height="24" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="30" stroke="url(#lg2)" stroke-width="4"/><circle cx="50" cy="35" r="6" fill="#00d4ff"/><circle cx="38" cy="55" r="6" fill="#7c3aed"/><circle cx="62" cy="55" r="6" fill="#ff6b35"/><defs><linearGradient id="lg2" x1="20" y1="20" x2="80" y2="80"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs></svg>
-        MediVisual Artist
+  <footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <svg width="24" height="24" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="30" stroke="url(#ftlg)" stroke-width="4"/><circle cx="50" cy="35" r="6" fill="#00d4ff"/><circle cx="38" cy="55" r="6" fill="#7c3aed"/><circle cx="62" cy="55" r="6" fill="#ff6b35"/><defs><linearGradient id="ftlg" x1="20" y1="20" x2="80" y2="80"><stop stop-color="#00d4ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs></svg>
+          MediVisual Artist
+        </div>
+        <p>AI驱动的医学可视化创作平台。深度医学语义理解，2小时交付出版级插图，期刊合规保障。</p>
       </div>
-      <p>AI驱动的医学可视化创作平台。深度医学语义理解，2小时交付出版级插图，期刊合规保障。</p>
+      <div class="footer-col">
+        <h4>产品</h4>
+        <a href="features.html">功能详情</a>
+        <a href="demo.html">在线演示</a>
+        <a href="pricing.html">定价方案</a>
+        <a href="portfolio.html">案例展示</a>
+      </div>
+      <div class="footer-col">
+        <h4>关于</h4>
+        <a href="about.html">团队介绍</a>
+        <a href="about.html#vision">愿景使命</a>
+        <a href="mailto:medivisual@mokangmedical.cn">加入我们</a>
+      </div>
+      <div class="footer-col">
+        <h4>支持</h4>
+        <a href="mailto:medivisual@mokangmedical.cn">联系我们</a>
+        <a href="demo.html">免费试用</a>
+        <a href="mailto:medivisual@mokangmedical.cn">帮助中心</a>
+      </div>
     </div>
-    <div class="footer-col">
-      <h4>产品</h4>
-      <a href="features.html">功能详情</a>
-      <a href="pricing.html">定价方案</a>
-      <a href="portfolio.html">案例展示</a>
-    </div>
-    <div class="footer-col">
-      <h4>关于</h4>
-      <a href="about.html">团队介绍</a>
-      <a href="about.html#vision">愿景使命</a>
-    </div>
-    <div class="footer-col">
-      <h4>支持</h4>
-      <a href="mailto:medivisual@mokangmedical.cn">联系我们</a>
-      <a href="#">帮助中心</a>
-      <a href="#">隐私政策</a>
+    <div class="footer-bottom">
+      <span>2026 MediVisual Artist. A MoKangMedical Project.</span>
+      <span>medivisual@mokangmedical.cn</span>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span>2026 MediVisual Artist. A MoKangMedical Project.</span>
-    <span>medivisual@mokangmedical.cn</span>
-  </div>
-</div>
-</footer>
+  </footer>
 
 <!-- Back to Top -->
 <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">

@@ -2,107 +2,108 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MediVisual Artist — MoKangMedical</title>
-<meta name="description" content="Medical Visualization Platform — Create publication-quality illustrations and data visualizations with AI">
-<link rel="stylesheet" href="https://mokangmedical.github.io/opc-homepage/shared-design-system.css">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>MediVisual Artist - MoKangMedical</title>
+<meta name="description" content="AI-powered medical image visualization and annotation platform.">
+<meta property="og:title" content="MediVisual Artist - MoKangMedical">
+<meta property="og:description" content="AI-powered medical image visualization and annotation platform.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mokangmedical.github.io/medivisual-artist/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1f3e5;</text></svg>">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--p:#d946ef;--bg:#0a0a0f;--s:#12121a;--t:#e2e8f0;--m:#94a3b8;--b:rgba(255,255,255,.06)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--t);line-height:1.6}
+a{color:var(--p);text-decoration:none}
+.nav{position:fixed;top:0;left:0;right:0;background:rgba(10,10,15,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--b);z-index:1000;padding:.8rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.nb{font-size:1.2rem;font-weight:700;color:var(--p)}
+.nl{display:flex;gap:1.5rem;align-items:center}
+.nl a{color:var(--m);font-size:.85rem;transition:color .2s}
+.nl a:hover{color:var(--t)}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,#d946ef15,transparent 70%)}
+.hc{position:relative;max-width:800px}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;letter-spacing:-.03em;background:linear-gradient(135deg,#fff,#d946ef);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1rem}
+.sub{font-size:1.3rem;color:var(--m);margin-bottom:2rem}
+.cat{display:inline-block;padding:.4rem 1rem;background:#d946ef22;border:1px solid #d946ef44;border-radius:999px;font-size:.8rem;color:var(--p);margin-bottom:2rem}
+.btn{display:inline-block;padding:.8rem 2rem;background:var(--p);color:#fff;border-radius:8px;font-weight:600;transition:all .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px #d946ef40}
+.bo{display:inline-block;padding:.6rem 1.5rem;border:1px solid var(--p);color:var(--p);border-radius:8px;font-weight:500;transition:all .2s}
+.bo:hover{background:var(--p);color:#fff}
+.sec{padding:5rem 2rem;max-width:1200px;margin:0 auto}
+.st{text-align:center;font-size:2.2rem;font-weight:700;margin-bottom:.5rem}
+.ss{text-align:center;color:var(--m);margin-bottom:3rem}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.fc{background:var(--s);border:1px solid var(--b);border-radius:12px;padding:2rem;transition:all .3s}
+.fc:hover{border-color:#d946ef40;transform:translateY(-4px)}
+.fi{width:40px;height:40px;background:#d946ef20;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1rem}
+.fc h3{font-size:1.1rem;margin-bottom:.5rem}
+.fc p{color:var(--m);font-size:.9rem}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin-top:2rem}
+.pc{background:var(--s);border:1px solid var(--b);border-radius:12px;padding:2rem;text-align:center;transition:all .3s}
+.pc:hover{border-color:#d946ef40}
+.pr{font-size:2.5rem;font-weight:800;color:var(--p);margin:1rem 0}
+.pc p{color:var(--m);margin-bottom:1.5rem}
+.cta{text-align:center;padding:5rem 2rem;background:linear-gradient(135deg,#d946ef10,transparent)}
+footer{text-align:center;padding:2rem;color:var(--m);font-size:.8rem;border-top:1px solid var(--b)}
+footer a{color:var(--m)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin:3rem 0}
+.stat{text-align:center}
+.stat .num{font-size:2.5rem;font-weight:800;color:var(--p)}
+.stat .lbl{color:var(--m);font-size:.85rem}
+@media(max-width:768px){.nl{display:none}.fg,.pg{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+</style>
 </head>
-<body style="padding-top:56px!important"><nav id="opc-nav" style="position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(10,10,30,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(99,102,241,0.2);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
-  <a href="https://mokangmedical.github.io/opc-homepage/" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:700;font-size:15px">
-    <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="url(#ng1)" stroke-width="2.5"/><path d="M10 16h12M16 10v12" stroke="url(#ng1)" stroke-width="2.5" stroke-linecap="round"/><defs><linearGradient id="ng1" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#818cf8"/><stop offset="1" stop-color="#c084fc"/></linearGradient></defs></svg>
-    <span style="background:linear-gradient(135deg,#818cf8,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent">MoKangMedical</span>
-  </a>
-  <div style="display:flex;gap:6px;align-items:center">
-    <a href="https://mokangmedical.github.io/opc-homepage/" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:8px">生态首页</a>
-    <a href="https://github.com/MoKangMedical" target="_blank" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:8px">GitHub</a>
-    <a href="https://mokangmedical.github.io/opc-alliance/" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;padding:6px 16px;border-radius:8px;font-weight:600;font-size:13px;text-decoration:none">OPC Hub</a>
-  </div>
-</nav>
-<nav class="eco-nav">
-<a class="nav-brand" href="https://mokangmedical.github.io/opc-homepage/">MoKangMedical</a>
-<div class="nav-links">
-<a href="https://github.com/MoKangMedical/medivisual-artist">GitHub</a>
-<a href="https://mokangmedical.github.io/opc-homepage/">Ecosystem</a>
+<body>
+<nav class="nav">
+<a href="https://mokangmedical.github.io/opc-homepage/" class="nb">MoKangMedical</a>
+<div class="nl">
 <a href="#features">Features</a>
 <a href="#pricing">Pricing</a>
+<a href="https://github.com/MoKangMedical/medivisual-artist">GitHub</a>
+<a href="https://mokangmedical.github.io/opc-homepage/">Ecosystem</a>
 </div>
 </nav>
-
 <section class="hero">
-<div class="badge">Visualization</div>
+<div class="hc">
+<span class="cat">Medical Imaging</span>
 <h1>MediVisual Artist</h1>
-<p class="subtitle">Medical Visualization Platform — Create publication-quality illustrations and data visualizations with AI</p>
-<div class="btn-group">
-<a href="https://github.com/MoKangMedical/medivisual-artist" class="btn btn-primary">View on GitHub</a>
-<a href="#features" class="btn btn-outline">Explore Features</a>
+<p class="sub">Medical Visualization Studio</p>
+<div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+<a href="https://github.com/MoKangMedical/medivisual-artist" class="btn">View on GitHub</a>
+<a href="#features" class="bo">Explore Features</a>
+</div>
 </div>
 </section>
-
-<section class="section" id="stats">
-<div class="stats"><div><div class="stat-num">500+</div><div class="stat-label">Templates</div></div><div><div class="stat-num">10+</div><div class="stat-label">Formats</div></div><div><div class="stat-num">3D</div><div class="stat-label">Rendering</div></div><div><div class="stat-num">AI</div><div class="stat-label">Powered</div></div></div>
-</section>
-
-<section class="section" id="features">
-<h2 class="section-title">Key Features</h2>
-<p class="section-desc">Powerful capabilities designed for medical professionals and researchers</p>
-<div class="card-grid"><div class="card fade-up">
-<div class="card-icon">🎨</div>
-<h3>Medical Illustration</h3>
-<p>AI-generated anatomical and pathological illustrations</p>
-</div><div class="card fade-up">
-<div class="card-icon">📊</div>
-<h3>Data Visualization</h3>
-<p>Interactive charts, survival curves, and forest plots</p>
-</div><div class="card fade-up">
-<div class="card-icon">🧬</div>
-<h3>Molecular Graphics</h3>
-<p>3D protein structures and drug-receptor interactions</p>
-</div><div class="card fade-up">
-<div class="card-icon">📱</div>
-<h3>Responsive Output</h3>
-<p>Export for journals, slides, posters, and web</p>
-</div><div class="card fade-up">
-<div class="card-icon">🎯</div>
-<h3>Template Library</h3>
-<p>500+ medical visualization templates</p>
-</div><div class="card fade-up">
-<div class="card-icon">⚡</div>
-<h3>Batch Processing</h3>
-<p>Generate multiple figures from datasets automatically</p>
-</div></div>
-</section>
-
-<section class="section" id="pricing">
-<h2 class="section-title">Pricing Plans</h2>
-<p class="section-desc">Choose the plan that fits your needs</p>
-<div class="pricing-grid"><div class="price-card ">
-
-<h3>Starter</h3>
-<div class="price-tag">$29/mo</div>
-<ul><li>50 exports/month</li><li>Basic templates</li><li>PNG/SVG</li></ul>
-<a href="https://github.com/MoKangMedical/medivisual-artist" class="btn btn-primary" style="width:100%;justify-content:center">Get Started</a>
-</div><div class="price-card featured">
-<div class="price-badge">Most Popular</div>
-<h3>Pro</h3>
-<div class="price-tag">$99/mo</div>
-<ul><li>Unlimited exports</li><li>All templates</li><li>3D rendering</li><li>API</li></ul>
-<a href="https://github.com/MoKangMedical/medivisual-artist" class="btn btn-primary" style="width:100%;justify-content:center">Get Started</a>
-</div><div class="price-card ">
-
-<h3>Team</h3>
-<div class="price-tag">$249/mo</div>
-<ul><li>5 seats</li><li>Brand kit</li><li>Priority rendering</li><li>Training</li></ul>
-<a href="https://github.com/MoKangMedical/medivisual-artist" class="btn btn-primary" style="width:100%;justify-content:center">Get Started</a>
-</div></div>
-</section>
-
-<footer class="footer">
-<div class="footer-links">
-<a href="https://mokangmedical.github.io/opc-homepage/">Ecosystem Home</a>
-<a href="https://github.com/MoKangMedical">GitHub Organization</a>
-<a href="https://github.com/MoKangMedical/medivisual-artist">This Project</a>
+<section class="sec" id="features">
+<h2 class="st">Capabilities</h2>
+<p class="ss">AI-powered medical image visualization and annotation platform.</p>
+<div class="fg"><div class="fc"><div class="fi">◆</div><h3>3D Rendering</h3><p>Advanced 3d rendering capabilities powered by AI</p></div><div class="fc"><div class="fi">◇</div><h3>AI Segmentation</h3><p>Advanced ai segmentation capabilities powered by AI</p></div><div class="fc"><div class="fi">◈</div><h3>Annotation Tools</h3><p>Advanced annotation tools capabilities powered by AI</p></div><div class="fc"><div class="fi">◉</div><h3>Collaboration</h3><p>Advanced collaboration capabilities powered by AI</p></div><div class="fc"><div class="fi">◊</div><h3>PACS Integration</h3><p>Advanced pacs integration capabilities powered by AI</p></div><div class="fc"><div class="fi">○</div><h3>Export Suite</h3><p>Advanced export suite capabilities powered by AI</p></div>
 </div>
-<p>&copy; 2025 MoKangMedical. All rights reserved.</p>
+</section>
+<section class="sec" id="pricing">
+<h2 class="st">Pricing</h2>
+<p class="ss">Flexible plans for every scale</p>
+<div class="pg">
+<div class="pc"><h3>Starter</h3><div class="pr">Free</div><p>Basic features and community support</p><a href="https://github.com/MoKangMedical/medivisual-artist" class="bo">Get Started</a></div>
+<div class="pc"><h3>Professional</h3><div class="pr">$299/mo</div><p>Full access with priority support</p><a href="https://github.com/MoKangMedical/medivisual-artist" class="bo">Start Trial</a></div>
+<div class="pc"><h3>Enterprise</h3><div class="pr">Custom</div><p>Custom deployment with SLA</p><a href="https://github.com/MoKangMedical/medivisual-artist" class="bo">Contact Sales</a></div>
+</div>
+</section>
+<section class="cta">
+<h2>Ready to get started?</h2>
+<p style="color:var(--m);margin-bottom:2rem">Join leading organizations using MediVisual Artist</p>
+<a href="https://github.com/MoKangMedical/medivisual-artist" class="btn">Get Started Free</a>
+</section>
+<footer>
+<p>&copy; 2025 MoKangMedical. All rights reserved. | <a href="https://mokangmedical.github.io/opc-homepage/">Ecosystem</a> | <a href="https://github.com/MoKangMedical">GitHub</a></p>
 </footer>
+<script>
+// Scroll reveal animation
+const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){i.target.style.opacity='1';i.target.style.transform='translateY(0)';obs.unobserve(i.target)}})},{threshold:.1});
+document.querySelectorAll('.fc,.pc').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='all 0.6s ease';obs.observe(el)});
+// Counter animation
+document.querySelectorAll('.stat .num').forEach(el=>{const t=parseInt(el.dataset.val||0);let c=0;const s=t/60;const tm=setInterval(()=>{c+=s;if(c>=t){c=t;clearInterval(tm)}el.textContent=Math.floor(c).toLocaleString()},25)});
+</script>
 </body>
 </html>

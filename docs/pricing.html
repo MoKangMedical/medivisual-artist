@@ -7,6 +7,7 @@
 <title>定价方案 - MediVisual Artist</title>
 <meta name="description" content="MediVisual Artist 定价方案：从免费试用到企业定制，灵活满足不同规模医学可视化需求。">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--primary:#00d4ff;--primary-dark:#0099cc;--accent:#ff6b35;--bg:#0a0f1a;--bg2:#0d1424;--bg3:#111827;--bg4:#1a2332;--text:#e8edf5;--text2:#94a3b8;--text3:#64748b;--border:#1e293b;--border2:#334155;--gradient:linear-gradient(135deg,#00d4ff,#7c3aed,#ff6b35);--glow:0 0 40px rgba(0,212,255,.15)}
@@ -38,7 +39,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,15,26,.9
 .price-desc{color:var(--text2);font-size:.85rem;margin-bottom:24px}
 .price-features{list-style:none;margin-bottom:32px}
 .price-features li{padding:8px 0;font-size:.85rem;color:var(--text2);display:flex;align-items:center;gap:8px}
-.price-features li::before{content:'--';color:var(--primary);font-weight:600;font-size:1rem}
+.price-features li::before{content:''}
 .price-btn{display:block;width:100%;padding:14px;text-align:center;border-radius:10px;font-weight:600;font-size:.9rem;transition:.3s;cursor:pointer;border:none;text-decoration:none}
 .price-btn.primary{background:var(--primary);color:var(--bg)}.price-btn.primary:hover{background:#fff}
 .price-btn.outline{background:transparent;color:var(--text);border:1px solid var(--border2)}.price-btn.outline:hover{border-color:var(--primary);color:var(--primary)}
@@ -109,7 +110,7 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
   </a>
   <div style="display:flex;gap:6px;align-items:center">
     <a href="https://mokangmedical.github.io/opc-homepage/" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:8px">生态首页</a>
-    <a href="https://github.com/MediVisual Artist" target="_blank" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:8px">GitHub</a>
+    <a href="https://github.com/MoKangMedical/medivisual-artist" target="_blank" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:8px">GitHub</a>
     <a href="https://mokangmedical.github.io/opc-alliance/" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;padding:6px 16px;border-radius:8px;font-weight:600;font-size:13px;text-decoration:none">OPC Hub</a>
   </div>
 </nav>
@@ -150,11 +151,11 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
       <div class="price-amount">Free<span></span></div>
       <div class="price-desc">适合初次体验AI医学可视化能力的研究者</div>
       <ul class="price-features">
-        <li>每月5张免费生成</li>
-        <li>基础风格模板(期刊/教学)</li>
-        <li>720p分辨率PNG输出</li>
-        <li>社区支持</li>
-        <li>基础医学实体识别</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>每月5张免费生成</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>基础风格模板(期刊/教学)</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>720p分辨率PNG输出</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>社区支持</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>基础医学实体识别</li>
       </ul>
       <a href="mailto:medivisual@mokangmedical.cn" class="price-btn outline">免费开始</a>
     </div>
@@ -163,14 +164,14 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
       <div class="price-amount">299<span>/月</span></div>
       <div class="price-desc">专业研究者的首选方案，满足日常论文配图需求</div>
       <ul class="price-features">
-        <li>无限生成次数</li>
-        <li>全部风格模板(期刊/教学/路演)</li>
-        <li>600 DPI TIFF/EPS高清输出</li>
-        <li>Nature/Cell/Lancet期刊合规审查</li>
-        <li>每图3轮迭代修改</li>
-        <li>版本控制与历史管理</li>
-        <li>中英双语标注</li>
-        <li>优先技术支持</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>无限生成次数</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>全部风格模板(期刊/教学/路演)</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>600 DPI TIFF/EPS高清输出</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Nature/Cell/Lancet期刊合规审查</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>每图3轮迭代修改</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>版本控制与历史管理</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>中英双语标注</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>优先技术支持</li>
       </ul>
       <a href="mailto:medivisual@mokangmedical.cn" class="price-btn primary">立即订阅</a>
     </div>
@@ -179,14 +180,14 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
       <div class="price-amount">定制<span></span></div>
       <div class="price-desc">面向高校、医院、药企的专属团队方案</div>
       <ul class="price-features">
-        <li>无限生成 + API批量接入</li>
-        <li>自定义品牌模板与LOGO</li>
-        <li>团队协作与权限管理</li>
-        <li>专属客户成功经理</li>
-        <li>SLA服务等级保障</li>
-        <li>私有化部署可选</li>
-        <li>自定义期刊合规规则</li>
-        <li>培训与咨询服务</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>无限生成 + API批量接入</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>自定义品牌模板与LOGO</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>团队协作与权限管理</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>专属客户成功经理</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>SLA服务等级保障</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>私有化部署可选</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>自定义期刊合规规则</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" style="flex-shrink:0" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>培训与咨询服务</li>
       </ul>
       <a href="mailto:medivisual@mokangmedical.cn" class="price-btn outline">联系销售</a>
     </div>
@@ -311,5 +312,6 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
   <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18,15 12,9 6,15"/></svg>
   </button>
+<script src="main.js"></script>
 </body>
 </html>

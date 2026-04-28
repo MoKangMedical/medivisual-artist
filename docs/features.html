@@ -10,6 +10,7 @@
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0f1a'/><circle cx='50' cy='50' r='30' fill='none' stroke='%2300d4ff' stroke-width='4'/><circle cx='50' cy='35' r='6' fill='%2300d4ff'/><circle cx='38' cy='55' r='6' fill='%237c3aed'/><circle cx='62' cy='55' r='6' fill='%23ff6b35'/></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -205,7 +206,7 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
   </a>
   <div style="display:flex;gap:6px;align-items:center">
     <a href="https://mokangmedical.github.io/opc-homepage/" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:8px">生态首页</a>
-    <a href="https://github.com/MediVisual Artist" target="_blank" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:8px">GitHub</a>
+    <a href="https://github.com/MoKangMedical/medivisual-artist" target="_blank" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:8px">GitHub</a>
     <a href="https://mokangmedical.github.io/opc-alliance/" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;padding:6px 16px;border-radius:8px;font-weight:600;font-size:13px;text-decoration:none">OPC Hub</a>
   </div>
 </nav>
@@ -261,7 +262,7 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
 
   <div class="detail-grid">
     <div class="detail-card">
-      <div class="detail-icon">&#129504;</div>
+      <div class="detail-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2a5.5 5.5 0 0 0-5.08 3.41A4.5 4.5 0 0 0 5.5 16h1V18a2 2 0 0 0 2 2h5a2 2 0 0 0 2-2v-2h1a4.5 4.5 0 0 0 1.08-10.59A5.5 5.5 0 0 0 9.5 2z"/><path d="M12 2v20"/></svg></div>
       <h3>医学实体识别</h3>
       <div class="detail-subtitle">GPT-4 / Claude 语义解析</div>
       <p>基于GPT-4与Claude大模型，对论文摘要进行深度语义解析。自动识别解剖结构、病理过程、药物靶点等医学实体，构建结构化语义图谱。支持中英文混合输入，准确率超过95%。</p>
@@ -273,7 +274,7 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
       </div>
     </div>
     <div class="detail-card">
-      <div class="detail-icon">&#128221;</div>
+      <div class="detail-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
       <h3>结构化Prompt生成</h3>
       <div class="detail-subtitle">从语义到视觉的精准转换</div>
       <p>将语义图谱转化为包含构图、配色、标注、视角的完整图像生成Prompt。内置医学可视化最佳实践模板，确保生成结果在解剖准确性和视觉美感之间达到最佳平衡。</p>
@@ -285,7 +286,7 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
       </div>
     </div>
     <div class="detail-card">
-      <div class="detail-icon">&#127912;</div>
+      <div class="detail-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="0.5" fill="currentColor"/><circle cx="17.5" cy="10.5" r="0.5" fill="currentColor"/><circle cx="8.5" cy="7.5" r="0.5" fill="currentColor"/><circle cx="6.5" cy="12.5" r="0.5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
       <h3>AI图像生成</h3>
       <div class="detail-subtitle">即梦AI / 火山引擎</div>
       <p>对接即梦AI与火山引擎图像生成API，采用多模型融合策略。支持高分辨率输出、多轮迭代优化，针对医学可视化场景进行专项微调，生成解剖细节精准的专业插图。</p>
@@ -297,7 +298,7 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
       </div>
     </div>
     <div class="detail-card">
-      <div class="detail-icon">&#9989;</div>
+      <div class="detail-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
       <h3>规则合规审查</h3>
       <div class="detail-subtitle">基于规则的自动化质量保障</div>
       <p>内置Nature、Cell、Lancet等顶级期刊的格式规范库，通过规则引擎自动检测分辨率、色彩空间、标注格式、字体规范等关键指标，确保输出可直接投稿。</p>
@@ -321,19 +322,19 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
 
   <div class="style-grid">
     <div class="style-card">
-      <div class="style-preview">&#128218;</div>
+      <div class="style-preview"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
       <h3>期刊论文风格</h3>
       <p>遵循Nature/Cell/Lancet等顶刊视觉规范。简洁、专业、高对比度，适合学术出版和SCI论文配图。</p>
       <span class="style-badge">学术出版</span>
     </div>
     <div class="style-card">
-      <div class="style-preview">&#127891;</div>
+      <div class="style-preview"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
       <h3>教学/讲座风格</h3>
       <p>清晰的结构分层、丰富的色彩编码和详细的标注指引，适合课件、教材和学术讲座演示。</p>
       <span class="style-badge">教育教学</span>
     </div>
     <div class="style-card">
-      <div class="style-preview">&#128200;</div>
+      <div class="style-preview"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
       <h3>商业路演风格</h3>
       <p>强调品牌调性和视觉冲击力，适合Pitch Deck、产品手册、投资者汇报等商业应用场景。</p>
       <span class="style-badge">商业展示</span>
@@ -369,12 +370,12 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
   </div>
 
   <div class="tag-list" style="margin-top:32px;justify-content:center">
-    <span class="tag">&#10003; Nature 格式规范</span>
-    <span class="tag">&#10003; Cell 投稿标准</span>
-    <span class="tag">&#10003; Lancet 格式要求</span>
-    <span class="tag">&#10003; JAMA 视觉指南</span>
-    <span class="tag">&#10003; Science 图表规范</span>
-    <span class="tag">&#10003; PNAS 标准</span>
+    <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline-block;vertical-align:-2px" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Nature 格式规范</span>
+    <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline-block;vertical-align:-2px" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Cell 投稿标准</span>
+    <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline-block;vertical-align:-2px" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Lancet 格式要求</span>
+    <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline-block;vertical-align:-2px" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> JAMA 视觉指南</span>
+    <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline-block;vertical-align:-2px" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Science 图表规范</span>
+    <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline-block;vertical-align:-2px" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> PNAS 标准</span>
   </div>
 </div>
 </section>
@@ -418,17 +419,17 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
 
   <div class="collab-grid">
     <div class="collab-card">
-      <div class="collab-icon">&#128101;</div>
+      <div class="collab-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
       <h3>团队工作空间</h3>
       <p>创建团队专属工作空间，邀请成员加入。支持角色权限管理（管理员/编辑/查看），团队项目统一管理，实时同步协作进度。</p>
     </div>
     <div class="collab-card">
-      <div class="collab-icon">&#128196;</div>
+      <div class="collab-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
       <h3>版本控制</h3>
       <p>每一次迭代自动生成版本快照。支持版本对比、回滚到历史版本、分支实验。完整的变更日志记录每次修改的Prompt和参数。</p>
     </div>
     <div class="collab-card">
-      <div class="collab-icon">&#128218;</div>
+      <div class="collab-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
       <h3>模板库</h3>
       <p>团队共享的Prompt模板库，积累最佳实践。支持按学科分类（解剖学、病理学、分子生物学等），一键复用高效模板，新成员快速上手。</p>
     </div>
@@ -445,7 +446,7 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
 
   <div class="i18n-visual">
     <div class="i18n-panel">
-      <h4><span class="flag">&#127464;&#127475;</span> 中文模式</h4>
+      <h4><span class="flag"><svg width="20" height="20" viewBox="0 0 24 16" fill="none" style="display:inline-block;vertical-align:-2px"><rect width="24" height="16" fill="#DE2910" rx="1"/><path d="M7.2 4.8l.5 1.5h1.6l-1.3.9.5 1.5-1.3-.9-1.3.9.5-1.5-1.3-.9h1.6z" fill="#FFDE00"/></svg></span> 中文模式</h4>
       <div class="i18n-item"><span class="term">心肌梗死</span><span class="localized">Myocardial Infarction</span></div>
       <div class="i18n-item"><span class="term">神经退行性病变</span><span class="localized">Neurodegenerative Disease</span></div>
       <div class="i18n-item"><span class="term">信号通路</span><span class="localized">Signaling Pathway</span></div>
@@ -453,7 +454,7 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
       <div class="i18n-item"><span class="term">免疫检查点</span><span class="localized">Immune Checkpoint</span></div>
     </div>
     <div class="i18n-panel">
-      <h4><span class="flag">&#127468;&#127463;</span> English Mode</h4>
+      <h4><span class="flag"><svg width="20" height="20" viewBox="0 0 24 16" fill="none" style="display:inline-block;vertical-align:-2px"><rect width="24" height="16" fill="#B22234" rx="1"/><rect y="1.23" width="24" height="1.23" fill="#fff"/><rect y="3.69" width="24" height="1.23" fill="#fff"/><rect y="6.15" width="24" height="1.23" fill="#fff"/><rect y="8.62" width="24" height="1.23" fill="#fff"/><rect y="11.08" width="24" height="1.23" fill="#fff"/><rect y="13.54" width="24" height="1.23" fill="#fff"/><rect width="9.6" height="8.62" fill="#3C3B6E"/></svg></span> English Mode</h4>
       <div class="i18n-item"><span class="term">Atherosclerosis</span><span class="localized">动脉粥样硬化</span></div>
       <div class="i18n-item"><span class="term">Apoptosis Pathway</span><span class="localized">细胞凋亡通路</span></div>
       <div class="i18n-item"><span class="term">Stem Cell Differentiation</span><span class="localized">干细胞分化</span></div>
@@ -463,10 +464,10 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
   </div>
 
   <div class="tag-list" style="margin-top:32px;justify-content:center">
-    <span class="tag">&#127760; 中英双语UI</span>
-    <span class="tag">&#128218; 本地化医学术语库</span>
-    <span class="tag">&#128269; 智能术语映射</span>
-    <span class="tag">&#128196; 双语标注输出</span>
+    <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;vertical-align:-2px" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> 中英双语UI</span>
+    <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;vertical-align:-2px" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> 本地化医学术语库</span>
+    <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;vertical-align:-2px" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> 智能术语映射</span>
+    <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;vertical-align:-2px" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> 双语标注输出</span>
   </div>
 </div>
 </section>
@@ -480,22 +481,22 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
 
   <div class="tech-grid">
     <div class="tech-card">
-      <div class="tech-icon">&#9889;</div>
+      <div class="tech-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
       <h4>前端</h4>
       <p>React + Tailwind CSS<br>响应式设计，流畅交互</p>
     </div>
     <div class="tech-card">
-      <div class="tech-icon">&#128268;</div>
+      <div class="tech-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a6 6 0 0 1-12 0V8z"/></svg></div>
       <h4>后端</h4>
       <p>Express + tRPC<br>类型安全，高效API</p>
     </div>
     <div class="tech-card">
-      <div class="tech-icon">&#128451;</div>
+      <div class="tech-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2" width="18" height="20" rx="2"/><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="14" x2="21" y2="14"/><line x1="9" y1="5" x2="15" y2="5"/><line x1="9" y1="11" x2="15" y2="11"/></svg></div>
       <h4>数据库</h4>
       <p>MySQL + Drizzle ORM<br>类型安全的ORM层</p>
     </div>
     <div class="tech-card">
-      <div class="tech-icon">&#128230;</div>
+      <div class="tech-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16.5 9.4-9-5.19"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
       <h4>AI服务</h4>
       <p>多模型API集成<br>智能路由与容错</p>
     </div>
@@ -580,5 +581,6 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
   <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18,15 12,9 6,15"/></svg>
   </button>
+<script src="main.js"></script>
 </body>
 </html>

@@ -7,6 +7,7 @@
 <meta name="description" content="了解 MediVisual Artist 团队与愿景，AI驱动医学可视化民主化。">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0f1a'/><circle cx='50' cy='50' r='30' fill='none' stroke='%2300d4ff' stroke-width='4'/><circle cx='50' cy='35' r='6' fill='%2300d4ff'/><circle cx='38' cy='55' r='6' fill='%237c3aed'/><circle cx='62' cy='55' r='6' fill='%23ff6b35'/></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -145,7 +146,7 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
   </a>
   <div style="display:flex;gap:6px;align-items:center">
     <a href="https://mokangmedical.github.io/opc-homepage/" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:8px">生态首页</a>
-    <a href="https://github.com/MediVisual Artist" target="_blank" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:8px">GitHub</a>
+    <a href="https://github.com/MoKangMedical/medivisual-artist" target="_blank" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:8px">GitHub</a>
     <a href="https://mokangmedical.github.io/opc-alliance/" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;padding:6px 16px;border-radius:8px;font-weight:600;font-size:13px;text-decoration:none">OPC Hub</a>
   </div>
 </nav>
@@ -186,12 +187,12 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
 <div class="container">
   <div class="vm-grid">
     <div class="vm-card">
-      <div class="icon">🔭</div>
+      <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10.5 2.5-3 8.5h5l3-8.5"/><path d="m7.5 11-4 11"/><path d="m15.5 11 4 11"/><circle cx="12" cy="18" r="3"/></svg></div>
       <h3>愿景</h3>
       <p>让每一位医学研究者都能轻松获得出版级可视化作品。不论经费多少、不论设计经验，高质量医学插图不再是少数人的特权。</p>
     </div>
     <div class="vm-card highlight">
-      <div class="icon">🚀</div>
+      <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
       <h3>使命</h3>
       <p>通过AI驱动的医学可视化民主化，将原本需要数天、花费数千元的专业医学插图制作流程，压缩到2小时、百元以内完成，让全球医学研究者聚焦于科学本身。</p>
     </div>
@@ -258,7 +259,7 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
   <div class="company-card">
     <div class="company-name">墨康医疗 MediVisual Artist</div>
     <p>MediVisual Artist（墨康医疗）专注于AI赋能医学教育与科研工具，MediVisual Artist是旗下首个面向全球医学研究者的可视化创作平台。</p>
-    <a href="mailto:medivisual@mokangmedical.cn" class="contact">✉ medivisual@mokangmedical.cn</a>
+    <a href="mailto:medivisual@mokangmedical.cn" class="contact"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;vertical-align:-2px" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> medivisual@mokangmedical.cn</a>
   </div>
 </div>
 </section>
@@ -318,5 +319,6 @@ nav.scrolled{background:rgba(10,15,26,.98);box-shadow:0 4px 30px rgba(0,0,0,.3)}
   <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18,15 12,9 6,15"/></svg>
   </button>
+<script src="main.js"></script>
 </body>
 </html>
